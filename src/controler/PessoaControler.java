@@ -148,6 +148,12 @@ public class PessoaControler {
             Logger.getLogger(PessoaControler.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(PessoaControler.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{
+            try {
+                fr.close();
+            } catch (IOException ex) {
+                Logger.getLogger(PessoaControler.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         return false;
     }

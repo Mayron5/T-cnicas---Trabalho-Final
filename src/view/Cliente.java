@@ -54,15 +54,16 @@ public class Cliente extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(null);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(153, 153, 255));
         jPanel1.setLayout(null);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/carrinho-de-compras.png"))); // NOI18N
         jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(990, 0, 90, 70);
+        jLabel2.setBounds(1010, 10, 70, 60);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Mensagem de boas vindas");
         jPanel1.add(jLabel3);
         jLabel3.setBounds(70, 9, 770, 50);
@@ -75,10 +76,10 @@ public class Cliente extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(1100, 0, 70, 70);
+        jLabel4.setBounds(1110, 10, 70, 60);
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 1220, 70);
+        jPanel1.setBounds(0, 0, 1220, 80);
 
         jInternalFrame1.setBackground(new java.awt.Color(255, 255, 255));
         jInternalFrame1.setEnabled(false);
@@ -101,7 +102,7 @@ public class Cliente extends javax.swing.JFrame {
         jInternalFrame1.getContentPane().add(jScrollPane1, java.awt.BorderLayout.CENTER);
 
         getContentPane().add(jInternalFrame1);
-        jInternalFrame1.setBounds(250, 150, 770, 450);
+        jInternalFrame1.setBounds(250, 170, 770, 450);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/background (1).jpg"))); // NOI18N
         getContentPane().add(jLabel1);

@@ -1,0 +1,2 @@
+1 League_of_Legends 0.0 0.0 Livre Torradeira
+2 League_o_Legends 0.0 0.0 Livre Torradeira true

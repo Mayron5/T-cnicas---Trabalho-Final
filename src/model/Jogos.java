@@ -10,13 +10,23 @@ package model;
  * @author Mayron
  */
 public class Jogos {
- 
+    
+    private int id;
     private String nome;
     private float valor;
     private float tamanho_jogo;
-    private int classificacao_etaria;
+    private String classificacao_etaria;
     private String pre_requisitos;
+    private boolean ativo;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
     public String getNome() {
         return nome;
     }
@@ -41,11 +51,11 @@ public class Jogos {
         this.tamanho_jogo = tamanho_jogo;
     }
 
-    public int getClassificacao_etaria() {
+    public String getClassificacao_etaria() {
         return classificacao_etaria;
     }
 
-    public void setClassificacao_etaria(int classificacao_etaria) {
+    public void setClassificacao_etaria(String classificacao_etaria) {
         this.classificacao_etaria = classificacao_etaria;
     }
 
@@ -56,6 +66,15 @@ public class Jogos {
     public void setPre_requisitos(String pre_requisitos) {
         this.pre_requisitos = pre_requisitos;
     }
+
+    public boolean isAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(boolean ativo) {
+        this.ativo = ativo;
+    }
+    
     
     
     
