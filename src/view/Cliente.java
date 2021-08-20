@@ -5,6 +5,7 @@
  */
 package view;
 
+import controler.PessoaControler;
 /**
  *
  * @author Mayron
@@ -20,10 +21,12 @@ public class Cliente extends javax.swing.JFrame {
     public Cliente(int id_cliente){
         this();
         this.id_cliente = id_cliente;
+        this.mensagem_boas_vindas(id_cliente);
     }
     
     public Cliente() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -35,18 +38,42 @@ public class Cliente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jLabel1 = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Cliente");
+        setMinimumSize(new java.awt.Dimension(1193, 696));
+        setUndecorated(true);
+        getContentPane().setLayout(null);
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(null);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/carrinho-de-compras.png"))); // NOI18N
+        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(1110, 0, 90, 70);
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel3.setText("Mensagem de boas vindas");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(70, 9, 770, 50);
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 1220, 70);
+
+        jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
+        jScrollPane1.setName(""); // NOI18N
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(60, 110, 1080, 540);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/background (1).jpg"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 1200, 700);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -54,6 +81,13 @@ public class Cliente extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+    
+    public void mensagem_boas_vindas(int id_cliente){
+        String nome_pessoa = PessoaControler.getInstance().retornar_nome(PessoaControler.getInstance().dados_pessoa(id_cliente));
+        jLabel3.setText("Olá "+ nome_pessoa + " seja bem vindo ao GankGames");
+    }
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -87,5 +121,10 @@ public class Cliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
