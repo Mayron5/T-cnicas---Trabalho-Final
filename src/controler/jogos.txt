@@ -1,2 +1,6 @@
 1 League_of_Legends 0.0 0.0 Livre Torradeira
 2 League_o_Legends 0.0 0.0 Livre Torradeira true
+3 LoL 21.5 155.0 Livre Está vivo true
+4 Liga_das_Lendas 0.0 170.0 Livre Está vivo false
+5 Fortnite 225.0 45.0 45 dsadasd false6 qwe 12.0 12.0 12 das false
+6 asda 123.0 1232.0 eqwe wqeqw true

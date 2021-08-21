@@ -51,6 +51,10 @@ public class JogosControler {
 
         nome = nome.replace(" ", "_");
         
+        if (nome.isEmpty()){
+            return "Preencha o nome";
+        }
+        
         if (this.verificar_jogo(nome)) {
             return "O jogo já está cadastrado";
         }

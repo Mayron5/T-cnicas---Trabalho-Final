@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 package view;
-
+import controler.JogosControler;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Mayron
@@ -31,7 +32,6 @@ public class CadastroJogos extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         tf_nome = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        tf_valor = new javax.swing.JFormattedTextField();
         jLabel1 = new javax.swing.JLabel();
         tf_tamanho = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
@@ -41,6 +41,7 @@ public class CadastroJogos extends javax.swing.JInternalFrame {
         tf_requisito = new javax.swing.JTextPane();
         check_visivel = new javax.swing.JCheckBox();
         jButton1 = new javax.swing.JButton();
+        tf_valor = new javax.swing.JTextField();
 
         setEnabled(false);
         setMinimumSize(new java.awt.Dimension(870, 650));
@@ -50,10 +51,6 @@ public class CadastroJogos extends javax.swing.JInternalFrame {
         jLabel2.setText("Nome do Jogo:");
 
         jLabel3.setText("Valor:");
-
-        tf_valor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("¤#,##0.00"))));
-        tf_valor.setEnabled(false);
-        tf_valor.setFocusable(false);
 
         jLabel1.setText("Tamanho do Jogo:");
 
@@ -89,23 +86,26 @@ public class CadastroJogos extends javax.swing.JInternalFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(check_visivel)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel5)
+                                .addComponent(jScrollPane1)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(tf_tamanho, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
-                                            .addComponent(tf_nome, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING))
-                                        .addComponent(jLabel1))
-                                    .addGap(120, 120, 120)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jLabel4)
-                                        .addComponent(jLabel3)
-                                        .addComponent(tf_valor)
-                                        .addComponent(tf_classificacao, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)))
-                                .addComponent(jScrollPane1))))
+                                        .addComponent(jLabel5)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                    .addComponent(tf_tamanho, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE)
+                                                    .addComponent(tf_nome, javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING))
+                                                .addComponent(jLabel1))
+                                            .addGap(120, 120, 120)
+                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(jLabel4)
+                                                .addComponent(jLabel3)
+                                                .addComponent(tf_classificacao)
+                                                .addComponent(tf_valor, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE))))
+                                    .addGap(9, 9, 9)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(297, 297, 297)
+                        .addGap(312, 312, 312)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(194, Short.MAX_VALUE))
         );
@@ -117,9 +117,9 @@ public class CadastroJogos extends javax.swing.JInternalFrame {
                     .addComponent(jLabel2)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(tf_nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tf_valor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_valor, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
@@ -134,9 +134,9 @@ public class CadastroJogos extends javax.swing.JInternalFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(check_visivel)
-                .addGap(48, 48, 48)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addGap(91, 91, 91))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -144,16 +144,16 @@ public class CadastroJogos extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(56, 56, 56)
+                .addGap(63, 63, 63)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(92, 92, 92))
+                .addContainerGap(76, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(66, 66, 66)
+                .addGap(84, 84, 84)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(184, 184, 184))
+                .addContainerGap(146, Short.MAX_VALUE))
         );
 
         pack();
@@ -165,11 +165,25 @@ public class CadastroJogos extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String nome = tf_nome.getText();
-        String valor = tf_valor.getText();
-        String tamanho = tf_tamanho.getText();
-        String requisitos = tf_requisito.getText().replace("\n", " ,");
+        float valor = Float.parseFloat(tf_valor.getText());
+        float tamanho = Float.parseFloat(tf_tamanho.getText());
+        String classificacao = tf_classificacao.getText();
+        String requisitos = tf_requisito.getText();
         
-        System.out.println(requisitos);
+        //String retorno = JogosControler.getInstance().adicionar_jogo(nome, valor, tamanho, classificacao, requisitos, check_visivel.isSelected());
+        
+        String retorno = null;
+        JOptionPane.showMessageDialog(null, retorno);
+        
+        if (retorno.equals("Jogo cadastrado com sucesso")){
+            tf_nome.setText(null);
+            tf_valor.setText(null);
+            tf_tamanho.setText(null);
+            tf_classificacao.setText(null);
+            tf_requisito.setText(null);
+            check_visivel.setSelected(false);
+            
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
@@ -187,6 +201,6 @@ public class CadastroJogos extends javax.swing.JInternalFrame {
     private javax.swing.JTextField tf_nome;
     private javax.swing.JTextPane tf_requisito;
     private javax.swing.JTextField tf_tamanho;
-    private javax.swing.JFormattedTextField tf_valor;
+    private javax.swing.JTextField tf_valor;
     // End of variables declaration//GEN-END:variables
 }
