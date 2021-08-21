@@ -13,6 +13,7 @@ public class Jogos {
     
     private int id;
     private String nome;
+    private String genero;
     private float valor;
     private float tamanho_jogo;
     private String classificacao_etaria;
