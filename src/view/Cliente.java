@@ -102,7 +102,7 @@ public class Cliente extends javax.swing.JFrame {
         jInternalFrame1.getContentPane().add(jScrollPane1, java.awt.BorderLayout.CENTER);
 
         getContentPane().add(jInternalFrame1);
-        jInternalFrame1.setBounds(250, 170, 770, 450);
+        jInternalFrame1.setBounds(170, 130, 880, 490);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/background (1).jpg"))); // NOI18N
         getContentPane().add(jLabel1);

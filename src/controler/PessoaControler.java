@@ -25,7 +25,7 @@ public class PessoaControler {
 
     private static PessoaControler Controler;
 
-    public int logar(String usuario, String senha) {
+    public int logar(String usuario, String senha, boolean isAdmin) {
 
         FileReader fr = null;
 
@@ -33,7 +33,13 @@ public class PessoaControler {
         usuarioLogado.setSenha(senha);
 
         try {
-            fr = new FileReader("src/controler/usuarios.txt");
+            
+            if (isAdmin) {
+                fr = new FileReader("src/controler/administradores.txt");
+            } else {
+                fr = new FileReader("src/controler/usuarios.txt");
+            }
+
             BufferedReader br = new BufferedReader(fr);
 
             String linha;
@@ -148,7 +154,7 @@ public class PessoaControler {
             Logger.getLogger(PessoaControler.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(PessoaControler.class.getName()).log(Level.SEVERE, null, ex);
-        }finally{
+        } finally {
             try {
                 fr.close();
             } catch (IOException ex) {
@@ -167,28 +173,27 @@ public class PessoaControler {
 
     public Pessoa dados_pessoa(int id_pessoa) {
 
-        
         FileReader fr = null;
 
         usuarioLogado.setId(id_pessoa);
-        
+
         try {
 
             fr = new FileReader("src/controler/usuarios.txt");
             BufferedReader br = new BufferedReader(fr);
-            
+
             String linha;
-            
-            while((linha = br.readLine()) != null){
-                
+
+            while ((linha = br.readLine()) != null) {
+
                 String dados[] = linha.split(" ");
-                if (Integer.parseInt(dados[0]) == usuarioLogado.getId()){
+                if (Integer.parseInt(dados[0]) == usuarioLogado.getId()) {
                     usuarioLogado.setNome(dados[1]);
                     usuarioLogado.setEmail(dados[2]);
                     usuarioLogado.setSenha(dados[3]);
                     usuarioLogado.setGenero(dados[4]);
                 }
-                
+
             }
 
         } catch (FileNotFoundException ex) {
@@ -199,10 +204,10 @@ public class PessoaControler {
         return usuarioLogado;
     }
 
-    public String retornar_nome(Pessoa dados){
+    public String retornar_nome(Pessoa dados) {
         return dados.getNome().replace("_", " ");
     }
-    
+
     public static PessoaControler getInstance() {
         if (Controler == null) {
             Controler = new PessoaControler();
