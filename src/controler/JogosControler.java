@@ -243,7 +243,6 @@ public class JogosControler {
             String linha;
 
             while ((linha = br.readLine()) != null) {
-
                 dados.add(linha);
             }
 

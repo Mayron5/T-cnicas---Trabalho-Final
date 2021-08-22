@@ -18,7 +18,9 @@ public class Cliente extends javax.swing.JFrame {
      * Creates new form Cliente
      */
     private int id_cliente;
-
+    
+    perfilCliente perfilcliente = new perfilCliente(id_cliente);
+    
     public Cliente(int id_cliente) {
         this();
         this.id_cliente = id_cliente;
@@ -28,6 +30,7 @@ public class Cliente extends javax.swing.JFrame {
     public Cliente() {
         initComponents();
         this.setLocationRelativeTo(null);
+        pn_principal_admin.add(perfilcliente);
     }
 
     /**
@@ -43,9 +46,8 @@ public class Cliente extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jInternalFrame1 = new javax.swing.JInternalFrame();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        pn_principal_admin = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -80,29 +82,12 @@ public class Cliente extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 1220, 80);
+        getContentPane().add(pn_principal_admin);
+        pn_principal_admin.setBounds(260, 110, 890, 540);
 
-        jInternalFrame1.setBackground(new java.awt.Color(255, 255, 255));
-        jInternalFrame1.setEnabled(false);
-        jInternalFrame1.setOpaque(true);
-        jInternalFrame1.setVisible(true);
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
-        jInternalFrame1.getContentPane().add(jScrollPane1, java.awt.BorderLayout.CENTER);
-
-        getContentPane().add(jInternalFrame1);
-        jInternalFrame1.setBounds(170, 130, 880, 490);
+        jButton1.setText("PERFIL");
+        getContentPane().add(jButton1);
+        jButton1.setBounds(40, 130, 190, 50);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/background (1).jpg"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -170,13 +155,12 @@ public class Cliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JInternalFrame jInternalFrame1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JPanel pn_principal_admin;
     // End of variables declaration//GEN-END:variables
 }
