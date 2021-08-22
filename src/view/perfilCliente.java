@@ -35,6 +35,7 @@ public class perfilCliente extends javax.swing.JInternalFrame {
         tf_email.setText(dados.getEmail());
         tf_senha.setText(dados.getSenha());
         cb_genero.setSelectedItem(dados.getGenero());
+        
     }
     
     /**
