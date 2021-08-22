@@ -19,20 +19,24 @@ public class Cliente extends javax.swing.JFrame {
      */
     private int id_cliente;
     
-    perfilCliente perfilcliente = new perfilCliente(id_cliente);
+    perfilCliente perfilcliente;
     
     public Cliente(int id_cliente) {
         this();
         this.id_cliente = id_cliente;
-        this.mensagem_boas_vindas(id_cliente);
+        this.mensagem_boas_vindas(this.id_cliente);
+        
+        perfilcliente = new perfilCliente(this.id_cliente);
+        pn_principal_admin.add(perfilcliente);
     }
 
     public Cliente() {
         initComponents();
         this.setLocationRelativeTo(null);
-        pn_principal_admin.add(perfilcliente);
     }
-
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -86,6 +90,11 @@ public class Cliente extends javax.swing.JFrame {
         pn_principal_admin.setBounds(260, 110, 890, 540);
 
         jButton1.setText("PERFIL");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1);
         jButton1.setBounds(40, 130, 190, 50);
 
@@ -108,6 +117,10 @@ public class Cliente extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jLabel4MouseClicked
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        exibir_telas(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -116,12 +129,18 @@ public class Cliente extends javax.swing.JFrame {
         int opcao = JOptionPane.showOptionDialog(null, mensagem, titulo, JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, options, options[0]);
         return opcao;
     }
-
+    
+    
+    
     public void mensagem_boas_vindas(int id_cliente) {
         String nome_pessoa = PessoaControler.getInstance().retornar_nome(PessoaControler.getInstance().dados_pessoa(id_cliente));
         jLabel3.setText("Olá " + nome_pessoa + " seja bem vindo ao GankGames");
     }
-
+    
+    public void exibir_telas(boolean dadospessoais){
+        perfilcliente.setVisible(dadospessoais);
+    }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
