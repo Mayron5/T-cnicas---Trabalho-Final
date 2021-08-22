@@ -5,6 +5,8 @@
  */
 package view;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Mayron
@@ -36,6 +38,7 @@ public class TelaAdmin extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -63,6 +66,15 @@ public class TelaAdmin extends javax.swing.JFrame {
         getContentPane().add(jButton2);
         jButton2.setBounds(20, 140, 250, 50);
 
+        jButton3.setText("Logout");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3);
+        jButton3.setBounds(80, 580, 110, 40);
+
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/background (1).jpg"))); // NOI18N
         jLabel5.setPreferredSize(new java.awt.Dimension(1193, 696));
         getContentPane().add(jLabel5);
@@ -78,6 +90,20 @@ public class TelaAdmin extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         visiblidadeTelas(false, true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        if (JOptionConfirm("Saindo do Sistema", "Deseja realmente sair?") == 0) {
+            LoginAdmin logAdmin = new LoginAdmin();
+            logAdmin.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    public int JOptionConfirm(String titulo, String mensagem) {
+        Object[] options = {"Confirmar", "Cancelar"};
+        int opcao = JOptionPane.showOptionDialog(null, mensagem, titulo, JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, options, options[0]);
+        return opcao;
+    }
 
     /**
      * @param args the command line arguments
@@ -124,6 +150,7 @@ public class TelaAdmin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables

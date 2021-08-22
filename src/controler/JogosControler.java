@@ -149,12 +149,12 @@ public class JogosControler {
 
         BufferedReader br = null;
         FileReader fr = null;
-        
+
         BufferedWriter bw = null;
         FileWriter fw = null;
-        
+
         List infor = new ArrayList();
-        
+
         try {
 
             fr = new FileReader("src/controler/jogos.txt");
@@ -166,21 +166,37 @@ public class JogosControler {
                 String dados[] = linha.split(" ");
                 if (dados[0].equals(id)) {
                     linha = id + " " + nome + " " + genero + " " + valor + " " + tamanho + " " + classificacao + " " + requisitos + " " + Boolean.toString(ativo);
-                    System.out.println(linha);
                 }
+                infor.add(linha);
             }
+            fr.close();
+            br.close();
             
-        } catch (IOException ex) {
+            fw = new FileWriter("src/controler/jogos.txt");
+            bw = new BufferedWriter(fw);
+            
+            Iterator it = infor.iterator();
+            Object element = null;
+
+            while (it.hasNext()) {
+                element = it.next();
+                bw.write(element.toString());
+                bw.newLine();
+            }
+            return "Concluido";
+            }catch (IOException ex) {
             Logger.getLogger(JogosControler.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
+        }finally {
             try {
-                br.close();
+                bw.close();
             } catch (IOException ex) {
                 Logger.getLogger(JogosControler.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        return "Não foi possível atualizar o jogo";
-    }
+            return "Não foi possível atualizar o jogo";
+        }
+
+    
 
     public boolean verificar_jogo(String nome) {
 

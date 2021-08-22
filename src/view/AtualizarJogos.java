@@ -257,9 +257,12 @@ public class AtualizarJogos extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_tf_classificacaoActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        carregar_tabela();
-        String retorno = JogosControler.getInstance().atualizar_jogo(lb_id.getText(), tf_nome.getText(), cb_genero.getSelectedItem().toString(), tf_valor.getText(), tf_tamanho.getText(), tf_classificacao.getText(), tf_requisito.getText(), check_visivel.isSelected());
-        JOptionPane.showMessageDialog(null, retorno);
+        if (JOptionConfirm("Atualizando os dados", "Os dados estão corretos?") == 0) {
+            String retorno = JogosControler.getInstance().atualizar_jogo(lb_id.getText(), tf_nome.getText(), cb_genero.getSelectedItem().toString(), tf_valor.getText(), tf_tamanho.getText(), tf_classificacao.getText(), tf_requisito.getText(), check_visivel.isSelected());
+            JOptionPane.showMessageDialog(null, retorno);
+            carregar_tabela();
+        }
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void tb_jogosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_jogosMouseClicked
@@ -292,6 +295,12 @@ public class AtualizarJogos extends javax.swing.JInternalFrame {
         tb_jogos.setModel(tb_model);
     }
 
+    public int JOptionConfirm(String titulo, String mensagem) {
+        Object[] options = {"Confirmar", "Cancelar"};
+        int opcao = JOptionPane.showOptionDialog(null, mensagem, titulo, JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, options, options[0]);
+        return opcao;
+    }
+
     public void limparTabela() {
         while (tb_model.getRowCount() > 0) {
             tb_model.removeRow(0);
@@ -310,8 +319,9 @@ public class AtualizarJogos extends javax.swing.JInternalFrame {
             String linha = element.toString();
             String infor[] = linha.split(" ");
 
-            infor[2] = infor[2].replace("_", " ");
             infor[1] = infor[1].replace("_", " ");
+            infor[2] = infor[2].replace("_", " ");
+            infor[6] = infor[6].replace("_", " ");
             infor[7] = infor[7].equals("true") ? "Sim" : "Não";
             tb_model.addRow(infor);
         }
