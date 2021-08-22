@@ -11,6 +11,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Jogos;
@@ -52,10 +55,10 @@ public class JogosControler {
         nome = nome.replace(" ", "_");
         genero = genero.replace(" ", "_");
         requisitos = requisitos.replace(" ", "_");
-        
+
         float valorFT = 0;
         float tamanhoFT = 0;
-        
+
         if (requisitos.isEmpty()) {
             requisitos = "Sem_Requisitos";
         }
@@ -66,11 +69,11 @@ public class JogosControler {
         } catch (NumberFormatException e) {
             return "Digite um valor válido";
         }
-        
+
         try {
-            
+
             tamanhoFT = Float.parseFloat(tamanho);
-            
+
         } catch (NumberFormatException e) {
             return "Digite um tamanho válido";
         }
@@ -113,6 +116,72 @@ public class JogosControler {
         return "Erro ao cadastrar um jogo";
     }
 
+    public String atualizar_jogo(String id, String nome, String genero, String valor, String tamanho, String classificacao, String requisitos, boolean ativo) {
+        nome = nome.replace(" ", "_");
+        genero = genero.replace(" ", "_");
+        requisitos = requisitos.replace(" ", "_");
+
+        float valorFT = 0;
+        float tamanhoFT = 0;
+
+        if (requisitos.isEmpty()) {
+            requisitos = "Sem_Requisitos";
+        }
+
+        try {
+            valorFT = Float.parseFloat(valor);
+
+        } catch (NumberFormatException e) {
+            return "Digite um valor válido";
+        }
+
+        try {
+
+            tamanhoFT = Float.parseFloat(tamanho);
+
+        } catch (NumberFormatException e) {
+            return "Digite um tamanho válido";
+        }
+
+        if (nome.isEmpty()) {
+            return "Preencha o nome";
+        }
+
+        BufferedReader br = null;
+        FileReader fr = null;
+        
+        BufferedWriter bw = null;
+        FileWriter fw = null;
+        
+        List infor = new ArrayList();
+        
+        try {
+
+            fr = new FileReader("src/controler/jogos.txt");
+            br = new BufferedReader(fr);
+
+            String linha;
+
+            while ((linha = br.readLine()) != null) {
+                String dados[] = linha.split(" ");
+                if (dados[0].equals(id)) {
+                    linha = id + " " + nome + " " + genero + " " + valor + " " + tamanho + " " + classificacao + " " + requisitos + " " + Boolean.toString(ativo);
+                    System.out.println(linha);
+                }
+            }
+            
+        } catch (IOException ex) {
+            Logger.getLogger(JogosControler.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                br.close();
+            } catch (IOException ex) {
+                Logger.getLogger(JogosControler.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return "Não foi possível atualizar o jogo";
+    }
+
     public boolean verificar_jogo(String nome) {
 
         FileReader fr = null;
@@ -143,6 +212,38 @@ public class JogosControler {
         }
 
         return false;
+    }
+
+    public List retornar_jogos() {
+
+        List dados = new ArrayList();
+        FileReader fr = null;
+
+        try {
+
+            fr = new FileReader("src/controler/jogos.txt");
+            BufferedReader br = new BufferedReader(fr);
+
+            String linha;
+
+            while ((linha = br.readLine()) != null) {
+
+                dados.add(linha);
+            }
+
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(JogosControler.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(JogosControler.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                fr.close();
+            } catch (IOException ex) {
+                Logger.getLogger(JogosControler.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+        return dados;
     }
 
     public static JogosControler getInstance() {

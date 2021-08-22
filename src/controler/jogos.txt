@@ -1,2 +1,5 @@
-1 League_of_Legends MOBA 0.0 0.0 Livre Torradeira
+1 League_of_Legends MOBA 0.0 0.0 Livre Torradeira false
 2 Liga_das_Lendas MUNDO_ABERTO 0.0 15455.0 Livre Computador,_Vida,_Harminia true
+3 Fortnice MUNDO_ABERTO 12.0 231321.0 +18 10_RAM false
+4 Minecraft MUNDO_ABERTO 87.5 1425.0 +10 Java_instalado true
+5 xzcxzc MOBA 123.0 123.0 ewq qwe true

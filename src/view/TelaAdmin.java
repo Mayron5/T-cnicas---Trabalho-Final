@@ -15,12 +15,13 @@ public class TelaAdmin extends javax.swing.JFrame {
      * Creates new form CadastroJogo
      */
     CadastroJogos cadJogos = new CadastroJogos();
+    AtualizarJogos attJogos = new AtualizarJogos();
 
     public TelaAdmin() {
         initComponents();
         this.setLocationRelativeTo(null);
         jPanel3.add(cadJogos);
-
+        jPanel3.add(attJogos);
     }
 
     /**
@@ -71,11 +72,11 @@ public class TelaAdmin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        visiblidadeTelas(true);
+        visiblidadeTelas(true, false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        visiblidadeTelas(false);
+        visiblidadeTelas(false, true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
@@ -114,8 +115,9 @@ public class TelaAdmin extends javax.swing.JFrame {
         });
     }
 
-    public void visiblidadeTelas(boolean cadJogos) {
+    public void visiblidadeTelas(boolean cadJogos, boolean attJogos) {
         this.cadJogos.setVisible(cadJogos);
+        this.attJogos.setVisible(attJogos);
     }
 
 

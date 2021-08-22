@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/Área%20de%20Trabalho/T-cnicas---Trabalho-Final/src/view/CadastroJogos.java</file>
             <file>file:/D:/Área%20de%20Trabalho/T-cnicas---Trabalho-Final/src/controler/JogosControler.java</file>
+            <file>file:/D:/Área%20de%20Trabalho/T-cnicas---Trabalho-Final/src/model/Jogos.java</file>
+            <file>file:/D:/Área%20de%20Trabalho/T-cnicas---Trabalho-Final/src/view/AtualizarJogos.java</file>
             <file>file:/D:/Área%20de%20Trabalho/T-cnicas---Trabalho-Final/src/view/TelaAdmin.java</file>
             <file>file:/D:/Área%20de%20Trabalho/T-cnicas---Trabalho-Final/src/view/PreLogin.java</file>
         </group>
