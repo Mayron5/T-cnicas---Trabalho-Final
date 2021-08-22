@@ -47,22 +47,47 @@ public class JogosControler {
         return novo_id++;
     }
 
-    public String adicionar_jogo(String nome, float valor, float tamanho, String classificacao, String requisitos, boolean ativo) {
+    public String adicionar_jogo(String nome, String genero, String valor, String tamanho, String classificacao, String requisitos, boolean ativo) {
 
         nome = nome.replace(" ", "_");
+        genero = genero.replace(" ", "_");
+        requisitos = requisitos.replace(" ", "_");
         
-        if (nome.isEmpty()){
-            return "Preencha o nome";
+        float valorFT = 0;
+        float tamanhoFT = 0;
+        
+        if (requisitos.isEmpty()) {
+            requisitos = "Sem_Requisitos";
+        }
+
+        try {
+            valorFT = Float.parseFloat(valor);
+
+        } catch (NumberFormatException e) {
+            return "Digite um valor válido";
         }
         
+        try {
+            
+            tamanhoFT = Float.parseFloat(tamanho);
+            
+        } catch (NumberFormatException e) {
+            return "Digite um tamanho válido";
+        }
+
+        if (nome.isEmpty()) {
+            return "Preencha o nome";
+        }
+
         if (this.verificar_jogo(nome)) {
             return "O jogo já está cadastrado";
         }
 
         jogo.setId(this.novo_id());
         jogo.setNome(nome);
-        jogo.setValor(valor);
-        jogo.setTamanho_jogo(tamanho);
+        jogo.setGenero(genero);
+        jogo.setValor(valorFT);
+        jogo.setTamanho_jogo(tamanhoFT);
         jogo.setClassificacao_etaria(classificacao);
         jogo.setPre_requisitos(requisitos);
         jogo.setAtivo(ativo);
@@ -71,7 +96,7 @@ public class JogosControler {
         try {
 
             bw = new BufferedWriter(new FileWriter("src/controler/jogos.txt", true));
-            String linha = Integer.toString(jogo.getId()) + " " + jogo.getNome() + " " + Float.toString(jogo.getValor()) + " " + Float.toString(jogo.getTamanho_jogo()) + " " + jogo.getClassificacao_etaria() + " " + jogo.getPre_requisitos() + " " + jogo.isAtivo();
+            String linha = Integer.toString(jogo.getId()) + " " + jogo.getNome() + " " + jogo.getGenero() + " " + Float.toString(jogo.getValor()) + " " + Float.toString(jogo.getTamanho_jogo()) + " " + jogo.getClassificacao_etaria() + " " + jogo.getPre_requisitos() + " " + jogo.isAtivo();
             bw.write(linha);
             bw.newLine();
             return "Jogo cadastrado com sucesso";
@@ -119,6 +144,7 @@ public class JogosControler {
 
         return false;
     }
+
     public static JogosControler getInstance() {
         if (Controler == null) {
             Controler = new JogosControler();

@@ -13,6 +13,7 @@ public class Jogos {
     
     private int id;
     private String nome;
+    private String genero;
     private float valor;
     private float tamanho_jogo;
     private String classificacao_etaria;
@@ -33,6 +34,14 @@ public class Jogos {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
     }
 
     public float getValor() {

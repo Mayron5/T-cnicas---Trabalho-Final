@@ -44,7 +44,7 @@ public class TelaAdmin extends javax.swing.JFrame {
         getContentPane().add(jPanel3);
         jPanel3.setBounds(310, 20, 870, 650);
 
-        jButton1.setText("jButton1");
+        jButton1.setText("CADASTRAR NOVO JOGO");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -53,7 +53,7 @@ public class TelaAdmin extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(23, 63, 250, 50);
 
-        jButton2.setText("jButton2");
+        jButton2.setText("ATUALIZAR JOGO");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);

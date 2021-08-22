@@ -71,6 +71,7 @@ public class PreLogin extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(40, 36, 110));
         jLabel2.setText("BEM VINDO AO GANKGAME, VOCÊ DESEJA ENTRAR COMO:");
         jLabel2.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
@@ -116,6 +117,7 @@ public class PreLogin extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(40, 36, 110));
         jLabel3.setText("ADMINISTRADOR");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -142,6 +144,7 @@ public class PreLogin extends javax.swing.JFrame {
         jPanel4.setMinimumSize(new java.awt.Dimension(160, 40));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(40, 36, 110));
         jLabel5.setText("CLIENTE");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
