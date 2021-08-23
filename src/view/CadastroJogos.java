@@ -35,7 +35,6 @@ public class CadastroJogos extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         tf_tamanho = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        tf_classificacao = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tf_requisito = new javax.swing.JTextPane();
@@ -44,6 +43,7 @@ public class CadastroJogos extends javax.swing.JInternalFrame {
         tf_valor = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         cb_genero = new javax.swing.JComboBox<>();
+        cb_etaria = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
 
         setEnabled(false);
@@ -66,12 +66,6 @@ public class CadastroJogos extends javax.swing.JInternalFrame {
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(40, 36, 110));
         jLabel4.setText("Classificação Etária");
-
-        tf_classificacao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tf_classificacaoActionPerformed(evt);
-            }
-        });
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(40, 36, 110));
@@ -97,6 +91,8 @@ public class CadastroJogos extends javax.swing.JInternalFrame {
 
         cb_genero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "MOBA", "FSP", "FANTASIA", "MUNDO ABERTO" }));
 
+        cb_etaria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Livre", "+10", "+12", "+14", "+16", "+18" }));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -119,11 +115,11 @@ public class CadastroJogos extends javax.swing.JInternalFrame {
                                         .addComponent(jLabel6)
                                         .addComponent(cb_genero, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGap(120, 120, 120)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel4)
                                         .addComponent(jLabel3)
-                                        .addComponent(tf_valor, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE)
-                                        .addComponent(tf_classificacao))))))
+                                        .addComponent(tf_valor, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(cb_etaria, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(308, 308, 308)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -146,8 +142,8 @@ public class CadastroJogos extends javax.swing.JInternalFrame {
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tf_classificacao, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tf_tamanho, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_tamanho, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cb_etaria, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -189,15 +185,11 @@ public class CadastroJogos extends javax.swing.JInternalFrame {
                 .addComponent(jLabel7)
                 .addGap(31, 31, 31)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(152, Short.MAX_VALUE))
+                .addContainerGap(150, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void tf_classificacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_classificacaoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tf_classificacaoActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
@@ -205,7 +197,7 @@ public class CadastroJogos extends javax.swing.JInternalFrame {
         String genero = cb_genero.getSelectedItem().toString();
         String valor = tf_valor.getText();
         String tamanho = tf_tamanho.getText();
-        String classificacao = tf_classificacao.getText();
+        String classificacao = cb_etaria.getSelectedItem().toString();
         String requisitos = tf_requisito.getText();
         
         
@@ -217,7 +209,6 @@ public class CadastroJogos extends javax.swing.JInternalFrame {
             tf_nome.setText(null);
             tf_valor.setText(null);
             tf_tamanho.setText(null);
-            tf_classificacao.setText(null);
             tf_requisito.setText(null);
             cb_genero.setSelectedIndex(0);
             check_visivel.setSelected(false);
@@ -227,6 +218,7 @@ public class CadastroJogos extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cb_etaria;
     private javax.swing.JComboBox<String> cb_genero;
     private javax.swing.JCheckBox check_visivel;
     private javax.swing.JButton jButton1;
@@ -239,7 +231,6 @@ public class CadastroJogos extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField tf_classificacao;
     private javax.swing.JTextField tf_nome;
     private javax.swing.JTextPane tf_requisito;
     private javax.swing.JTextField tf_tamanho;

@@ -4,8 +4,11 @@
  * and open the template in the editor.
  */
 package view;
+
 import controler.PessoaControler;
+import javax.swing.JOptionPane;
 import model.Pessoa;
+
 /**
  *
  * @author Mayron
@@ -15,29 +18,29 @@ public class perfilCliente extends javax.swing.JInternalFrame {
     /**
      * Creates new form perfilCliente
      */
-    
     private int id_cliente;
-    
-    public perfilCliente(int id_cliente){
+
+    public perfilCliente(int id_cliente) {
         this();
         this.id_cliente = id_cliente;
         dados_pessoais(this.id_cliente);
     }
-    
+
     public perfilCliente() {
         initComponents();
-        
+
     }
-    
-    public void dados_pessoais(int id_cliente){
+
+    public void dados_pessoais(int id_cliente) {
         Pessoa dados = PessoaControler.getInstance().dados_pessoa(id_cliente);
-        tf_nome.setText(dados.getNome());
+        tf_nome.setText(dados.getNome().replace("_", " "));
         tf_email.setText(dados.getEmail());
         tf_senha.setText(dados.getSenha());
         cb_genero.setSelectedItem(dados.getGenero());
         
+        
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -72,6 +75,11 @@ public class perfilCliente extends javax.swing.JInternalFrame {
         jLabel5.setText("Gênero:");
 
         jButton1.setText("ATUALIZAR");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         cb_genero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Feminino" }));
 
@@ -131,6 +139,19 @@ public class perfilCliente extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        if (JOptionConfirm("Atualizar dados", "Deseja realmente atualizar os dados?") == 0) {
+            String retorno = PessoaControler.getInstance().atualizar_pessoa(this.id_cliente, tf_nome.getText(), tf_email.getText(), tf_senha.getText(), cb_genero.getSelectedItem().toString());
+            JOptionPane.showMessageDialog(null, retorno);
+        }
+        dados_pessoais(id_cliente);
+    }//GEN-LAST:event_jButton1ActionPerformed
+    public int JOptionConfirm(String titulo, String mensagem) {
+        Object[] options = {"Confirmar", "Cancelar"};
+        int opcao = JOptionPane.showOptionDialog(null, mensagem, titulo, JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, options, options[0]);
+        return opcao;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cb_genero;

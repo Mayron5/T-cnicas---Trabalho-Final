@@ -49,7 +49,7 @@ public class Cliente extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        lb_boas_vindas = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         pn_principal_admin = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -70,11 +70,11 @@ public class Cliente extends javax.swing.JFrame {
         jPanel1.add(jLabel2);
         jLabel2.setBounds(1010, 10, 70, 60);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Mensagem de boas vindas");
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(70, 9, 770, 50);
+        lb_boas_vindas.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        lb_boas_vindas.setForeground(new java.awt.Color(255, 255, 255));
+        lb_boas_vindas.setText("Mensagem de boas vindas");
+        jPanel1.add(lb_boas_vindas);
+        lb_boas_vindas.setBounds(70, 9, 770, 50);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/logout.png"))); // NOI18N
         jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -147,7 +147,7 @@ public class Cliente extends javax.swing.JFrame {
     
     public void mensagem_boas_vindas(int id_cliente) {
         String nome_pessoa = PessoaControler.getInstance().retornar_nome(PessoaControler.getInstance().dados_pessoa(id_cliente));
-        jLabel3.setText("Olá " + nome_pessoa + " seja bem vindo ao GankGames");
+        lb_boas_vindas.setText("Olá " + nome_pessoa + " seja bem vindo ao GankGames");
     }
     
     public void exibir_telas(boolean dadospessoais, boolean jogosdisponiveis) {
@@ -192,9 +192,9 @@ public class Cliente extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lb_boas_vindas;
     private javax.swing.JPanel pn_principal_admin;
     // End of variables declaration//GEN-END:variables
 }

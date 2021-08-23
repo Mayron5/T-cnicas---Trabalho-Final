@@ -11,6 +11,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Pessoa;
@@ -33,7 +36,7 @@ public class PessoaControler {
         usuarioLogado.setSenha(senha);
 
         try {
-            
+
             if (isAdmin) {
                 fr = new FileReader("src/controler/administradores.txt");
             } else {
@@ -206,6 +209,69 @@ public class PessoaControler {
 
     public String retornar_nome(Pessoa dados) {
         return dados.getNome().replace("_", " ");
+    }
+
+    public String atualizar_pessoa(int id, String nome, String email, String senha, String genero) {
+        
+        nome = nome.replace(" ", "_");
+        usuarioLogado.setNome(nome);
+        usuarioLogado.setEmail(email);
+        usuarioLogado.setSenha(senha);
+        usuarioLogado.setGenero(genero);
+        usuarioLogado.setId(id);
+
+        if (usuarioLogado.getNome().equals("") || usuarioLogado.getEmail().equals("") || usuarioLogado.getSenha().equals("")) {
+            return "Preenchar todos os dados";
+        }
+
+
+        BufferedReader br = null;
+        FileReader fr = null;
+
+        BufferedWriter bw = null;
+        FileWriter fw = null;
+
+        List infor = new ArrayList();
+
+        try {
+
+            fr = new FileReader("src/controler/usuarios.txt");
+            br = new BufferedReader(fr);
+
+            String linha;
+
+            while ((linha = br.readLine()) != null) {
+                String dados[] = linha.split(" ");
+                if (dados[0].equals(Integer.toString(id))) {
+                    linha = id + " " + nome + " " + email + " " + senha + " " + genero;
+                }
+                infor.add(linha);
+            }
+            fr.close();
+            br.close();
+
+            fw = new FileWriter("src/controler/usuarios.txt");
+            bw = new BufferedWriter(fw);
+
+            Iterator it = infor.iterator();
+            Object element = null;
+
+            while (it.hasNext()) {
+                element = it.next();
+                bw.write(element.toString());
+                bw.newLine();
+            }
+            return "Atualizado com sucesso!";
+        } catch (IOException ex) {
+            Logger.getLogger(JogosControler.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                bw.close();
+            } catch (IOException ex) {
+                Logger.getLogger(JogosControler.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return "Não foi possível atualizar os dados";
     }
 
     public static PessoaControler getInstance() {

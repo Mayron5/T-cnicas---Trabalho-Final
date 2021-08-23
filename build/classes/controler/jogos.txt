@@ -1,3 +1,4 @@
 1 League_of_Legends MOBA 0 1240 Livre 10_de_ram_e_15_de_hd false
 2 Fortinite FANTASIA 49.9 1 +18 Livre true
 3 Minecraft MUNDO_ABERTO 100.0 575572.0 +10 Ter_java_instalado false
+4 Legends_of_Mobile MOBA 0.0 1224.0 +12 Ter_um_celular true

@@ -49,7 +49,7 @@
               <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="152" max="32767" attributes="0"/>
+              <EmptySpace pref="150" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -79,11 +79,11 @@
                                           <Component id="cb_genero" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="tf_valor" pref="217" max="32767" attributes="0"/>
-                                          <Component id="tf_classificacao" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="tf_valor" min="-2" pref="217" max="-2" attributes="0"/>
+                                          <Component id="cb_etaria" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -118,8 +118,8 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="tf_classificacao" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                       <Component id="tf_tamanho" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="cb_etaria" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
@@ -187,11 +187,6 @@
             <Property name="text" type="java.lang.String" value="Classifica&#xe7;&#xe3;o Et&#xe1;ria"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="tf_classificacao">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_classificacaoActionPerformed"/>
-          </Events>
-        </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -257,6 +252,23 @@
                 <StringItem index="1" value="FSP"/>
                 <StringItem index="2" value="FANTASIA"/>
                 <StringItem index="3" value="MUNDO ABERTO"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cb_etaria">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="6">
+                <StringItem index="0" value="Livre"/>
+                <StringItem index="1" value="+10"/>
+                <StringItem index="2" value="+12"/>
+                <StringItem index="3" value="+14"/>
+                <StringItem index="4" value="+16"/>
+                <StringItem index="5" value="+18"/>
               </StringArray>
             </Property>
           </Properties>
