@@ -171,10 +171,10 @@ public class JogosControler {
             }
             fr.close();
             br.close();
-            
+
             fw = new FileWriter("src/controler/jogos.txt");
             bw = new BufferedWriter(fw);
-            
+
             Iterator it = infor.iterator();
             Object element = null;
 
@@ -184,19 +184,17 @@ public class JogosControler {
                 bw.newLine();
             }
             return "Concluido";
-            }catch (IOException ex) {
+        } catch (IOException ex) {
             Logger.getLogger(JogosControler.class.getName()).log(Level.SEVERE, null, ex);
-        }finally {
+        } finally {
             try {
                 bw.close();
             } catch (IOException ex) {
                 Logger.getLogger(JogosControler.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-            return "Não foi possível atualizar o jogo";
-        }
-
-    
+        return "Não foi possível atualizar o jogo";
+    }
 
     public boolean verificar_jogo(String nome) {
 
@@ -259,6 +257,47 @@ public class JogosControler {
         }
 
         return dados;
+    }
+
+    public Jogos retornar_dados_jogo(int id_jogo) {
+
+        FileReader fr = null;
+        
+        try {
+
+            fr = new FileReader("src/controler/jogos.txt");
+            BufferedReader br = new BufferedReader(fr);
+
+            String linha;
+
+            while ((linha = br.readLine()) != null) {
+                String dados[] = linha.split(" ");
+
+                if (dados[0].equals(Integer.toString(id_jogo))) {
+                    jogo.setId(Integer.parseInt(dados[0]));
+                    jogo.setNome(dados[1].replace("_", " "));
+                    jogo.setGenero(dados[2].replace("_", " "));
+                    jogo.setValor(Float.parseFloat(dados[3]));
+                    jogo.setTamanho_jogo(Float.parseFloat(dados[4]));
+                    jogo.setClassificacao_etaria(dados[5]);
+                    jogo.setPre_requisitos(dados[6]);
+                    jogo.setAtivo(Boolean.parseBoolean(dados[7]));
+                }
+            }
+
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(JogosControler.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(JogosControler.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                fr.close();
+            } catch (IOException ex) {
+                Logger.getLogger(JogosControler.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+        return jogo;
     }
 
     public static JogosControler getInstance() {

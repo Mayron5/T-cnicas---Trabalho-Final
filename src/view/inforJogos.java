@@ -4,18 +4,31 @@
  * and open the template in the editor.
  */
 package view;
-
+import model.Jogos;
+import controler.JogosControler;
 /**
  *
  * @author Cadu Santos
  */
-public class carrinhodeCompras extends javax.swing.JFrame {
+public class inforJogos extends javax.swing.JFrame {
 
     /**
      * Creates new form carrinhodecompras
      */
-    public carrinhodeCompras() {
+    
+    private int id_jogos;
+    
+    
+    public inforJogos(int id_jogo){
+        this();
+        this.id_jogos = id_jogo;
+        dados_jogo();
+    }
+    
+    public inforJogos() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        
     }
 
     /**
@@ -29,14 +42,14 @@ public class carrinhodeCompras extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lb_nome = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
-        jLabel3 = new javax.swing.JLabel();
+        tf_requisitos = new javax.swing.JTextArea();
+        lb_classificacao = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        lb_preco = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -50,26 +63,28 @@ public class carrinhodeCompras extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(1221, 689));
+        setMinimumSize(new java.awt.Dimension(1288, 640));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/overwatch-tracer.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
 
-        jLabel2.setText("OVERWATCH - PC - PS4/PS6 - XBOX ONE/SERIES S, X");
+        lb_nome.setText("OVERWATCH - PC - PS4/PS6 - XBOX ONE/SERIES S, X");
 
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setText("Descrição:Overwatch é um jogo eletrônico multijogador\nde tiro em primeira pessoa desenvolvido e publicado pela\n Blizzard Entertainment. Foi lançado em 24 de maio de 2016 \npara Microsoft Windows, PlayStation 4 e Xbox One \ne em 15 de outubro de 2019 para Nintendo Switch");
+        jTextArea1.setText("ewqewqewqewqeqewq");
+        jTextArea1.setEnabled(false);
         jScrollPane1.setViewportView(jTextArea1);
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
-        jTextArea2.setRows(5);
-        jTextArea2.setText("Overwatch: requisitos mínimos\nSistema operacional: Windows 7.\nProcessador: Intel Core i3 ou AMD Phenom X3 8650.\nMemória: RAM 4GB.\nPlaca de vídeo: NVIDIA GeForce GTX 460, ATI Radeon HD 4850 ou Intel HD Graphics 4400.\nEspaço em disco: 30G");
-        jScrollPane2.setViewportView(jTextArea2);
+        tf_requisitos.setColumns(20);
+        tf_requisitos.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        tf_requisitos.setRows(5);
+        tf_requisitos.setText("Overwatch: requisitos mínimos\nSistema operacional: Windows 7.\nProcessador: Intel Core i3 ou AMD Phenom X3 8650.\nMemória: RAM 4GB.\nPlaca de vídeo: NVIDIA GeForce GTX 460, ATI Radeon HD 4850 ou Intel HD Graphics 4400.\nEspaço em disco: 30Grewrwe");
+        tf_requisitos.setEnabled(false);
+        jScrollPane2.setViewportView(tf_requisitos);
 
-        jLabel3.setText("Classificação etária: +12 ");
+        lb_classificacao.setText("Classificação etária: +12 ");
 
         jButton1.setText("Comprar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -78,7 +93,7 @@ public class carrinhodeCompras extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText("R$ 60,00");
+        lb_preco.setText("R$ 60,00");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -88,13 +103,13 @@ public class carrinhodeCompras extends javax.swing.JFrame {
                 .addGap(102, 102, 102)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 518, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lb_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 518, Short.MAX_VALUE)
+                    .addComponent(lb_classificacao)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lb_preco, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1))
                 .addContainerGap(228, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -106,15 +121,15 @@ public class carrinhodeCompras extends javax.swing.JFrame {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 612, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(38, 38, 38)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lb_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lb_classificacao, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(13, 13, 13)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addComponent(lb_preco, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(17, Short.MAX_VALUE))
@@ -144,35 +159,45 @@ public class carrinhodeCompras extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(carrinhodeCompras.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(inforJogos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(carrinhodeCompras.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(inforJogos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(carrinhodeCompras.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(inforJogos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(carrinhodeCompras.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(inforJogos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new carrinhodeCompras().setVisible(true);
+                new inforJogos().setVisible(true);
             }
         });
     }
-
+    public void dados_jogo(){
+        Jogos dados = JogosControler.getInstance().retornar_dados_jogo(this.id_jogos);
+        
+        lb_nome.setText(dados.getNome());
+        lb_classificacao.setText("Classificação etária: " + dados.getClassificacao_etaria());
+        lb_preco.setText("R$" + dados.getValor());
+        tf_requisitos.setText(dados.getPre_requisitos().replace("_", " "));
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JLabel lb_classificacao;
+    private javax.swing.JLabel lb_nome;
+    private javax.swing.JLabel lb_preco;
+    private javax.swing.JTextArea tf_requisitos;
     // End of variables declaration//GEN-END:variables
 }

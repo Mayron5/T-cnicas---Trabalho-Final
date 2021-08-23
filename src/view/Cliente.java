@@ -7,6 +7,7 @@ package view;
 
 import controler.PessoaControler;
 import javax.swing.JOptionPane;
+import view.images.jogosDisponiveis;
 
 /**
  *
@@ -20,6 +21,7 @@ public class Cliente extends javax.swing.JFrame {
     private int id_cliente;
     
     perfilCliente perfilcliente;
+    jogosDisponiveis jogosdisponiveis = new jogosDisponiveis();
     
     public Cliente(int id_cliente) {
         this();
@@ -28,15 +30,14 @@ public class Cliente extends javax.swing.JFrame {
         
         perfilcliente = new perfilCliente(this.id_cliente);
         pn_principal_admin.add(perfilcliente);
+        pn_principal_admin.add(jogosdisponiveis);
     }
-
+    
     public Cliente() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
-    
-    
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -52,6 +53,7 @@ public class Cliente extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         pn_principal_admin = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -98,6 +100,15 @@ public class Cliente extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(40, 130, 190, 50);
 
+        jButton2.setText("JOGOS");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2);
+        jButton2.setBounds(40, 200, 190, 50);
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/background (1).jpg"))); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 1200, 700);
@@ -106,7 +117,7 @@ public class Cliente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-
+        
         if (JOptionConfirm("Logout", "Deseja deslogar do sistema?") == 0) {
             JOptionPane.showMessageDialog(null, "Logout feito com sucesso!");
             Login login = new Login();
@@ -118,8 +129,12 @@ public class Cliente extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        exibir_telas(true);
+        exibir_telas(true, false);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        exibir_telas(false, true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -130,15 +145,14 @@ public class Cliente extends javax.swing.JFrame {
         return opcao;
     }
     
-    
-    
     public void mensagem_boas_vindas(int id_cliente) {
         String nome_pessoa = PessoaControler.getInstance().retornar_nome(PessoaControler.getInstance().dados_pessoa(id_cliente));
         jLabel3.setText("Olá " + nome_pessoa + " seja bem vindo ao GankGames");
     }
     
-    public void exibir_telas(boolean dadospessoais){
-        perfilcliente.setVisible(dadospessoais);
+    public void exibir_telas(boolean dadospessoais, boolean jogosdisponiveis) {
+        this.perfilcliente.setVisible(dadospessoais);
+        this.jogosdisponiveis.setVisible(jogosdisponiveis);
     }
     
     public static void main(String args[]) {
@@ -175,6 +189,7 @@ public class Cliente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

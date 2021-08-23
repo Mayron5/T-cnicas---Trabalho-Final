@@ -21,7 +21,7 @@
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1221, 689]"/>
+      <Dimension value="[1288, 640]"/>
     </Property>
   </Properties>
   <SyntheticProperties>
@@ -47,13 +47,13 @@
               <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" pref="404" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel2" min="-2" pref="336" max="-2" attributes="0"/>
-                  <Component id="jScrollPane2" alignment="0" min="-2" pref="518" max="-2" attributes="0"/>
-                  <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" min="-2" pref="349" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="lb_nome" min="-2" pref="336" max="-2" attributes="0"/>
+                  <Component id="jScrollPane2" alignment="0" pref="518" max="32767" attributes="0"/>
+                  <Component id="lb_classificacao" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jButton1" min="-2" pref="109" max="-2" attributes="0"/>
-                  <Component id="jLabel4" min="-2" pref="109" max="-2" attributes="0"/>
+                  <Component id="lb_preco" min="-2" pref="109" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="228" max="32767" attributes="0"/>
           </Group>
@@ -69,15 +69,15 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                      <Component id="jLabel2" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="lb_nome" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel3" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="lb_classificacao" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" min="-2" pref="101" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="120" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jScrollPane2" min="-2" pref="118" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                      <Component id="jLabel4" min="-2" pref="20" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <Component id="lb_preco" min="-2" pref="20" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jButton1" min="-2" pref="34" max="-2" attributes="0"/>
                   </Group>
@@ -96,7 +96,7 @@
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
+    <Component class="javax.swing.JLabel" name="lb_nome">
       <Properties>
         <Property name="text" type="java.lang.String" value="OVERWATCH - PC - PS4/PS6 - XBOX ONE/SERIES S, X"/>
       </Properties>
@@ -115,7 +115,8 @@
               <Font name="Cambria" size="13" style="0"/>
             </Property>
             <Property name="rows" type="int" value="5"/>
-            <Property name="text" type="java.lang.String" value="Descri&#xe7;&#xe3;o:Overwatch &#xe9; um jogo eletr&#xf4;nico multijogador&#xa;de tiro em primeira pessoa desenvolvido e publicado pela&#xa; Blizzard Entertainment. Foi lan&#xe7;ado em 24 de maio de 2016 &#xa;para Microsoft Windows, PlayStation 4 e Xbox One &#xa;e em 15 de outubro de 2019 para Nintendo Switch"/>
+            <Property name="text" type="java.lang.String" value="ewqewqewqewqeqewq"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -127,19 +128,20 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTextArea" name="jTextArea2">
+        <Component class="javax.swing.JTextArea" name="tf_requisitos">
           <Properties>
             <Property name="columns" type="int" value="20"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Cambria" size="13" style="0"/>
             </Property>
             <Property name="rows" type="int" value="5"/>
-            <Property name="text" type="java.lang.String" value="Overwatch: requisitos m&#xed;nimos&#xa;Sistema operacional: Windows 7.&#xa;Processador: Intel Core i3 ou AMD Phenom X3 8650.&#xa;Mem&#xf3;ria: RAM 4GB.&#xa;Placa de v&#xed;deo: NVIDIA GeForce GTX 460, ATI Radeon HD 4850 ou Intel HD Graphics 4400.&#xa;Espa&#xe7;o em disco: 30G"/>
+            <Property name="text" type="java.lang.String" value="Overwatch: requisitos m&#xed;nimos&#xa;Sistema operacional: Windows 7.&#xa;Processador: Intel Core i3 ou AMD Phenom X3 8650.&#xa;Mem&#xf3;ria: RAM 4GB.&#xa;Placa de v&#xed;deo: NVIDIA GeForce GTX 460, ATI Radeon HD 4850 ou Intel HD Graphics 4400.&#xa;Espa&#xe7;o em disco: 30Grewrwe"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JLabel" name="jLabel3">
+    <Component class="javax.swing.JLabel" name="lb_classificacao">
       <Properties>
         <Property name="text" type="java.lang.String" value="Classifica&#xe7;&#xe3;o et&#xe1;ria: +12 "/>
       </Properties>
@@ -152,7 +154,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel4">
+    <Component class="javax.swing.JLabel" name="lb_preco">
       <Properties>
         <Property name="text" type="java.lang.String" value="R$ 60,00"/>
       </Properties>
