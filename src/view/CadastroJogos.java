@@ -265,8 +265,8 @@ public class CadastroJogos extends javax.swing.JInternalFrame {
             String valor = tf_valor.getText();
             String tamanho = tf_tamanho.getText();
             String classificacao = cb_etaria.getSelectedItem().toString();
-            String requisitos = tf_requisito.getText();
-            String descricao = tf_descricao.getText();
+            String requisitos = tf_requisito.getText().replace("\n", "*");
+            String descricao = tf_descricao.getText().replace("\n", "*");
 
             String retorno = JogosControler.getInstance().adicionar_jogo(nome, genero, valor, tamanho, classificacao, requisitos, descricao, check_visivel.isSelected());
 

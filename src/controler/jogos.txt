@@ -1,6 +1,8 @@
 1;Overwatch;FANTASIA;150.0;1112122.0;+14;10 de memoria ram;true;Um jogo quase de viado.
-2;Jogo;FSP;23.0;323132.0;+12;dsfsdfd;true;sffds
+2;Jogo;FSP;23.0;323132.0;+12;dsfsdfd;true
 3;Eu;MOBA;1.0;1.0;Livre;ewq;true;wqe
 4;liga;MOBA;123.0;123.0;Livre;sad;true;sadas
-5;wre;MUNDO ABERTO;3213.0;123.0;+14;qewqe;true;ewrew
+5;wre;MUNDO ABERTO;3213.0;123.0;+14;qewqe;true
 6;teste;FSP;3213.0;213.0;+14;fdsf;true;fdsf
+7;Neeko Liga;MOBA;0.0;0.0;+18;ter +18;true;Um jogo so da neeko
+8;sdfds;MUNDO ABERTO;34.0;324.0;+12;Overwatch: requisitos mínimos*Sistema operacional: Windows 7.*Processador: Intel Core i3 ou AMD Phenom X3 8650.*Memória: RAM 4GB.*Placa de vídeo: NVIDIA GeForce GTX 460, ATI Radeon HD 4850 ou Intel HD Graphics 4400.*Espaço em disco: 30Grewrwe;true;fdsfdf

@@ -114,11 +114,12 @@ public class ManipularImagem {
             if (entrada.exists()){
                 BufferedImage imagem = ImageIO.read(entrada);
                 label.setIcon(new ImageIcon(imagem));
+            }else{
+                label.setIcon(null);
             }
             
             
         } catch (IOException ex) {
-            label.setIcon(null);
             Logger.getLogger(ManipularImagem.class.getName()).log(Level.SEVERE, null, ex);
         }
         
