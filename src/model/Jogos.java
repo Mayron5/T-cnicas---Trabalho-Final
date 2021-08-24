@@ -13,6 +13,7 @@ public class Jogos {
     
     private int id;
     private String nome;
+    private String descricao;
     private String genero;
     private float valor;
     private float tamanho_jogo;
@@ -63,6 +64,15 @@ public class Jogos {
     public String getClassificacao_etaria() {
         return classificacao_etaria;
     }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
 
     public void setClassificacao_etaria(String classificacao_etaria) {
         this.classificacao_etaria = classificacao_etaria;

@@ -7,6 +7,7 @@ package view;
 
 import javax.swing.JOptionPane;
 import controler.PessoaControler;
+import view.util.Auxiliares;
 
 /**
  *
@@ -246,7 +247,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        int resposta = JOptionConfirm("Saindo do Sistema", "Deseja realmente fechar o programa?");
+        int resposta = Auxiliares.JOptionConfirm("Saindo do Sistema", "Deseja realmente fechar o programa?");
         if (resposta == 0) {
             this.dispose();
         }
@@ -259,11 +260,7 @@ public class Login extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    public int JOptionConfirm(String titulo, String mensagem) {
-        Object[] options = {"Confirmar", "Cancelar"};
-        int opcao = JOptionPane.showOptionDialog(null, mensagem, titulo, JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, options, options[0]);
-        return opcao;
-    }
+  
 
     /**
      * @param args the command line arguments

@@ -6,6 +6,11 @@
 package view;
 import model.Jogos;
 import controler.JogosControler;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import view.util.*;
 /**
  *
  * @author Cadu Santos
@@ -18,7 +23,7 @@ public class inforJogos extends javax.swing.JFrame {
     
     private int id_jogos;
     
-    
+    BufferedImage imagem;
     public inforJogos(int id_jogo){
         this();
         this.id_jogos = id_jogo;
@@ -41,10 +46,10 @@ public class inforJogos extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        lb_capa = new javax.swing.JLabel();
         lb_nome = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        tf_desc = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
         tf_requisitos = new javax.swing.JTextArea();
         lb_classificacao = new javax.swing.JLabel();
@@ -62,20 +67,19 @@ public class inforJogos extends javax.swing.JFrame {
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1288, 640));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/overwatch-tracer.jpg"))); // NOI18N
-        jLabel1.setText("jLabel1");
+        lb_capa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/overwatch-tracer.jpg"))); // NOI18N
 
         lb_nome.setText("OVERWATCH - PC - PS4/PS6 - XBOX ONE/SERIES S, X");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
-        jTextArea1.setRows(5);
-        jTextArea1.setText("ewqewqewqewqeqewq");
-        jTextArea1.setEnabled(false);
-        jScrollPane1.setViewportView(jTextArea1);
+        tf_desc.setColumns(20);
+        tf_desc.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
+        tf_desc.setRows(5);
+        tf_desc.setText("ewqewqewqewqeqewq");
+        tf_desc.setEnabled(false);
+        jScrollPane1.setViewportView(tf_desc);
 
         tf_requisitos.setColumns(20);
         tf_requisitos.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
@@ -101,7 +105,7 @@ public class inforJogos extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(102, 102, 102)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lb_capa, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lb_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -118,7 +122,7 @@ public class inforJogos extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 612, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lb_capa, javax.swing.GroupLayout.PREFERRED_SIZE, 612, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(38, 38, 38)
                         .addComponent(lb_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -185,19 +189,24 @@ public class inforJogos extends javax.swing.JFrame {
         lb_nome.setText(dados.getNome());
         lb_classificacao.setText("Classificação etária: " + dados.getClassificacao_etaria());
         lb_preco.setText("R$" + dados.getValor());
-        tf_requisitos.setText(dados.getPre_requisitos().replace("_", " "));
+        tf_requisitos.setText(dados.getPre_requisitos());
+        tf_desc.setText(dados.getDescricao());
+        
+        
+        ManipularImagem.exibiImagemLabel(dados.getNome(), lb_capa);
+        
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel lb_capa;
     private javax.swing.JLabel lb_classificacao;
     private javax.swing.JLabel lb_nome;
     private javax.swing.JLabel lb_preco;
+    private javax.swing.JTextArea tf_desc;
     private javax.swing.JTextArea tf_requisitos;
     // End of variables declaration//GEN-END:variables
 }

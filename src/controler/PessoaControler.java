@@ -48,7 +48,7 @@ public class PessoaControler {
             String linha;
 
             while ((linha = br.readLine()) != null) {
-                String dados[] = linha.split(" ");
+                String dados[] = linha.split(";");
 
                 if (dados[2].equals(usuarioLogado.getEmail()) && dados[3].equals(usuarioLogado.getSenha())) {
                     usuarioLogado.setId(Integer.parseInt(dados[0]));
@@ -94,7 +94,7 @@ public class PessoaControler {
 
     public String novo_usuario(String nome, String email, String senha, String confirmacao, String genero) {
 
-        nome = nome.replace(" ", "_");
+        
         usuarioLogado.setNome(nome);
         usuarioLogado.setEmail(email);
         usuarioLogado.setSenha(senha);
@@ -117,7 +117,7 @@ public class PessoaControler {
         try {
 
             bw = new BufferedWriter(new FileWriter("src/controler/usuarios.txt", true));
-            String linha = Integer.toString(usuarioLogado.getId()) + " " + usuarioLogado.getNome() + " " + usuarioLogado.getEmail() + " " + usuarioLogado.getSenha() + " " + usuarioLogado.getGenero();
+            String linha = Integer.toString(usuarioLogado.getId()) + ";" + usuarioLogado.getNome() + ";" + usuarioLogado.getEmail() + ";" + usuarioLogado.getSenha() + ";" + usuarioLogado.getGenero();
             bw.write(linha);
             bw.newLine();
             return "Cadastrado com sucesso!";
@@ -146,7 +146,7 @@ public class PessoaControler {
             String linha = null;
 
             while ((linha = br.readLine()) != null) {
-                String dados[] = linha.split(" ");
+                String dados[] = linha.split(";");
 
                 if (dados[2].equals(email)) {
                     return true;
@@ -189,7 +189,7 @@ public class PessoaControler {
 
             while ((linha = br.readLine()) != null) {
 
-                String dados[] = linha.split(" ");
+                String dados[] = linha.split(";");
                 if (Integer.parseInt(dados[0]) == usuarioLogado.getId()) {
                     usuarioLogado.setNome(dados[1]);
                     usuarioLogado.setEmail(dados[2]);
@@ -208,12 +208,11 @@ public class PessoaControler {
     }
 
     public String retornar_nome(Pessoa dados) {
-        return dados.getNome().replace("_", " ");
+        return dados.getNome();
     }
 
     public String atualizar_pessoa(int id, String nome, String email, String senha, String genero) {
         
-        nome = nome.replace(" ", "_");
         usuarioLogado.setNome(nome);
         usuarioLogado.setEmail(email);
         usuarioLogado.setSenha(senha);
@@ -241,9 +240,9 @@ public class PessoaControler {
             String linha;
 
             while ((linha = br.readLine()) != null) {
-                String dados[] = linha.split(" ");
+                String dados[] = linha.split(";");
                 if (dados[0].equals(Integer.toString(id))) {
-                    linha = id + " " + nome + " " + email + " " + senha + " " + genero;
+                    linha = id + ";" + nome + ";" + email + ";" + senha + ";" + genero;
                 }
                 infor.add(linha);
             }

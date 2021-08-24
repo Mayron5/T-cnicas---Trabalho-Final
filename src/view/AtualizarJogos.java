@@ -270,11 +270,11 @@ public class AtualizarJogos extends javax.swing.JInternalFrame {
         int linha_selecionada = tb_jogos.getSelectedRow();
         lb_id.setText(tb_jogos.getValueAt(linha_selecionada, 0).toString());
         tf_nome.setText(tb_jogos.getValueAt(linha_selecionada, 1).toString());
-        cb_genero.setSelectedItem(tb_jogos.getValueAt(linha_selecionada, 2).toString().replace("_", " "));
+        cb_genero.setSelectedItem(tb_jogos.getValueAt(linha_selecionada, 2).toString());
         tf_valor.setText(tb_jogos.getValueAt(linha_selecionada, 3).toString());
         tf_tamanho.setText(tb_jogos.getValueAt(linha_selecionada, 4).toString());
         cb_etaria.setSelectedItem(tb_jogos.getValueAt(linha_selecionada, 5).toString());
-        tf_requisito.setText(tb_jogos.getValueAt(linha_selecionada, 6).toString().replace("_", " "));
+        tf_requisito.setText(tb_jogos.getValueAt(linha_selecionada, 6).toString());
         String ativo = tb_jogos.getValueAt(linha_selecionada, 7).toString();
         check_visivel.setSelected(ativo.equals("Sim"));
     }//GEN-LAST:event_tb_jogosMouseClicked
@@ -316,11 +316,8 @@ public class AtualizarJogos extends javax.swing.JInternalFrame {
         while (it.hasNext()) {
             element = it.next();
             String linha = element.toString();
-            String infor[] = linha.split(" ");
+            String infor[] = linha.split(";");
 
-            infor[1] = infor[1].replace("_", " ");
-            infor[2] = infor[2].replace("_", " ");
-            infor[6] = infor[6].replace("_", " ");
             infor[7] = infor[7].equals("true") ? "Sim" : "Não";
             tb_model.addRow(infor);
         }

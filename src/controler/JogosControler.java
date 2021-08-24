@@ -50,11 +50,7 @@ public class JogosControler {
         return novo_id++;
     }
 
-    public String adicionar_jogo(String nome, String genero, String valor, String tamanho, String classificacao, String requisitos, boolean ativo) {
-
-        nome = nome.replace(" ", "_");
-        genero = genero.replace(" ", "_");
-        requisitos = requisitos.replace(" ", "_");
+    public String adicionar_jogo(String nome, String genero, String valor, String tamanho, String classificacao, String requisitos, String descricao, boolean ativo) {
 
         float valorFT = 0;
         float tamanhoFT = 0;
@@ -85,7 +81,13 @@ public class JogosControler {
         if (this.verificar_jogo(nome)) {
             return "O jogo já está cadastrado";
         }
-
+        
+        if (valorFT < 0){
+            return "Valor inválido";
+        }
+        if (tamanhoFT < 0){
+            return "Tamanho inválido";
+        }
         jogo.setId(this.novo_id());
         jogo.setNome(nome);
         jogo.setGenero(genero);
@@ -94,12 +96,13 @@ public class JogosControler {
         jogo.setClassificacao_etaria(classificacao);
         jogo.setPre_requisitos(requisitos);
         jogo.setAtivo(ativo);
+        jogo.setDescricao(descricao);
 
         BufferedWriter bw = null;
         try {
 
             bw = new BufferedWriter(new FileWriter("src/controler/jogos.txt", true));
-            String linha = Integer.toString(jogo.getId()) + " " + jogo.getNome() + " " + jogo.getGenero() + " " + Float.toString(jogo.getValor()) + " " + Float.toString(jogo.getTamanho_jogo()) + " " + jogo.getClassificacao_etaria() + " " + jogo.getPre_requisitos() + " " + jogo.isAtivo();
+            String linha = Integer.toString(jogo.getId()) + ";" + jogo.getNome() + ";" + jogo.getGenero() + ";" + Float.toString(jogo.getValor()) + ";" + Float.toString(jogo.getTamanho_jogo()) + ";" + jogo.getClassificacao_etaria() + ";" + jogo.getPre_requisitos() + ";" + jogo.isAtivo() + ";" + jogo.getDescricao();
             bw.write(linha);
             bw.newLine();
             return "Jogo cadastrado com sucesso";
@@ -117,9 +120,7 @@ public class JogosControler {
     }
 
     public String atualizar_jogo(String id, String nome, String genero, String valor, String tamanho, String classificacao, String requisitos, boolean ativo) {
-        nome = nome.replace(" ", "_");
-        genero = genero.replace(" ", "_");
-        requisitos = requisitos.replace(" ", "_");
+        
 
         float valorFT = 0;
         float tamanhoFT = 0;
@@ -146,6 +147,13 @@ public class JogosControler {
         if (nome.isEmpty()) {
             return "Preencha o nome";
         }
+        
+        if (valorFT < 0){
+            return "Valor inválido";
+        }
+        if (tamanhoFT < 0){
+            return "Tamanho inválido";
+        }
 
         BufferedReader br = null;
         FileReader fr = null;
@@ -163,9 +171,9 @@ public class JogosControler {
             String linha;
 
             while ((linha = br.readLine()) != null) {
-                String dados[] = linha.split(" ");
+                String dados[] = linha.split(";");
                 if (dados[0].equals(id)) {
-                    linha = id + " " + nome + " " + genero + " " + valor + " " + tamanho + " " + classificacao + " " + requisitos + " " + Boolean.toString(ativo);
+                    linha = id + ";" + nome + ";" + genero + ";" + valor + ";" + tamanho + ";" + classificacao + ";" + requisitos + ";" + Boolean.toString(ativo);
                 }
                 infor.add(linha);
             }
@@ -207,7 +215,7 @@ public class JogosControler {
             String linha;
 
             while ((linha = br.readLine()) != null) {
-                String dados[] = linha.split(" ");
+                String dados[] = linha.split(";");
                 if (dados[1].equals(nome)) {
                     return true;
                 }
@@ -271,17 +279,18 @@ public class JogosControler {
             String linha;
 
             while ((linha = br.readLine()) != null) {
-                String dados[] = linha.split(" ");
+                String dados[] = linha.split(";");
 
                 if (dados[0].equals(Integer.toString(id_jogo))) {
                     jogo.setId(Integer.parseInt(dados[0]));
-                    jogo.setNome(dados[1].replace("_", " "));
-                    jogo.setGenero(dados[2].replace("_", " "));
+                    jogo.setNome(dados[1]);
+                    jogo.setGenero(dados[2]);
                     jogo.setValor(Float.parseFloat(dados[3]));
                     jogo.setTamanho_jogo(Float.parseFloat(dados[4]));
                     jogo.setClassificacao_etaria(dados[5]);
                     jogo.setPre_requisitos(dados[6]);
                     jogo.setAtivo(Boolean.parseBoolean(dados[7]));
+                    jogo.setDescricao(dados[8]);
                 }
             }
 

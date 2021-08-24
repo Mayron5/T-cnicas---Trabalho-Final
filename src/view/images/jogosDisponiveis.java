@@ -159,11 +159,8 @@ public class jogosDisponiveis extends javax.swing.JInternalFrame {
         while (it.hasNext()) {
             element = it.next();
             String linha = element.toString();
-            String infor[] = linha.split(" ");
+            String infor[] = linha.split(";");
 
-            infor[1] = infor[1].replace("_", " ");
-            infor[2] = infor[2].replace("_", " ");
-            infor[6] = infor[6].replace("_", " ");
             infor[7] = infor[7].equals("true") ? "Sim" : "Não";
             tb_model.addRow(infor);
         }
