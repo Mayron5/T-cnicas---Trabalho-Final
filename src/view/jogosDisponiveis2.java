@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view.images;
+package view;
 
 import controler.JogosControler;
 import java.util.Iterator;
@@ -15,13 +15,13 @@ import view.inforJogos;
  *
  * @author Mayron
  */
-public class jogosDisponiveis extends javax.swing.JInternalFrame {
+public class jogosDisponiveis2 extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form jogosDisponiveis
+     * Creates new form jogosDisponiveis2
      */
     DefaultTableModel tb_model = new DefaultTableModel();
-    public jogosDisponiveis() {
+    public jogosDisponiveis2() {
         initComponents();
         iniciar_tabel_modelo();
         carregar_tabela();
@@ -97,13 +97,13 @@ public class jogosDisponiveis extends javax.swing.JInternalFrame {
                     .addGap(0, 31, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 830, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 830, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 830, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 652, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGap(0, 32, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 566, Short.MAX_VALUE)
+            .addGap(0, 570, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 14, Short.MAX_VALUE)

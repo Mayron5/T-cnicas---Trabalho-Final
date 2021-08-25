@@ -7,7 +7,6 @@ package view;
 
 import controler.PessoaControler;
 import javax.swing.JOptionPane;
-import view.images.jogosDisponiveis;
 
 /**
  *
@@ -21,7 +20,7 @@ public class Cliente extends javax.swing.JFrame {
     private int id_cliente;
     
     perfilCliente perfilcliente;
-    jogosDisponiveis jogosdisponiveis = new jogosDisponiveis();
+    jogosDisponiveis2 jogosdisponiveis = new jogosDisponiveis2();
     
     public Cliente(int id_cliente) {
         this();

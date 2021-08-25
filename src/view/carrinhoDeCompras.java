@@ -3,25 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view.images;
+package view;
 
 import controler.JogosControler;
 import java.util.Iterator;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
-import view.inforJogos;
+
 
 /**
  *
  * @author Mayron
  */
-public class jogosDisponiveis extends javax.swing.JInternalFrame {
+public class carrinhoDeCompras extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form jogosDisponiveis
+     * Creates new form jogosDisponiveis2
      */
     DefaultTableModel tb_model = new DefaultTableModel();
-    public jogosDisponiveis() {
+    public carrinhoDeCompras() {
         initComponents();
         iniciar_tabel_modelo();
         carregar_tabela();
@@ -37,99 +37,56 @@ public class jogosDisponiveis extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        jScrollPane2 = new javax.swing.JScrollPane();
         tb_jogos = new javax.swing.JTable();
 
         setMinimumSize(new java.awt.Dimension(890, 544));
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 2, 11)); // NOI18N
-        jLabel1.setText("Pesquise aqui um jogo");
+        jLabel1.setText("Carrinho de Compras");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-
-        tb_jogos.setAutoCreateRowSorter(true);
         tb_jogos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"God of war", "Jogo eletrônico de luta, RPG eletrônico, Jogo eletrônico de ação e aventura", "180 mangos  "},
-                {"Spider man", "Ação e aventura, super hérois", "120 mangos "},
-                {"The Legend of Zelda: Ocarina of Time ", "RPG de aventura", "80 mangos "},
-                {"Super Mario World", "Plataforma, aventura", "Grátis"},
-                {"Grand Theft Auto V", "Ação e aventura", "180 (100 vip) mangos"},
-                {"Minecraft", "Sandbox e Sobrevivência", "80 mangos"},
-                {"League of Legends", "MOBA", "Grátis"},
-                {"The Legend of Zelda: Breath of the Wild", "RPG, Ação e aventura", "175 mangos "},
-                {"Dark Souls Collection", "RPG de ação", "200 mangos(180 vip)"},
-                {"The Witcher 3", " RPG de ação", "175 mangos"},
-                {"Street Fighter 2 (1991)", "Luta, arcacde", "Grátis "},
-                {"World of Warcraft", "MMORPG", "50 mangos (Grátis vip)"},
-                {"The Last of Us 1 e 2", "Aventura, Sobrevivência e Horror", "220 mangos"},
-                {"Red Dead Redemption 1 e 2", "Ação e aventura , faroeste", "200 mangos"},
-                {"Grand Theft Auto: San Andreas ", "Ação e aventura", "Grátis "},
-                {"Counter-Strike", "FPS", "Grátis"},
-                {"Assassin's Creed legendary collection ", "Aventura e ação", "550 mangos (450 vip)"},
-                {"Uncharted Ultimate Collection", "Ação e aventura, shooter", "200 mangos"},
-                {"Overwatch", "FPS, hero shooter", "60 mangos"},
-                {"The elder scrolls ultimate collection ", "RPG de ação", "150 mangos"}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Título do Jogo", "Gênero", "Preço"
+                "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        tb_jogos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tb_jogosMouseClicked(evt);
-            }
-        });
-        jScrollPane1.setViewportView(tb_jogos);
+        jScrollPane2.setViewportView(tb_jogos);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 893, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 815, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(45, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 31, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 830, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 830, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(0, 32, Short.MAX_VALUE)))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 702, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 566, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(138, 138, 138)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(349, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 14, Short.MAX_VALUE)
+                    .addGap(0, 17, Short.MAX_VALUE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(20, 20, 20)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(30, 30, 30)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 15, Short.MAX_VALUE)))
+                    .addGap(0, 531, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void tb_jogosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_jogosMouseClicked
-
-        int linha_selecionada = tb_jogos.getSelectedRow();
-        String id_jogo = tb_jogos.getValueAt(linha_selecionada, 0).toString();
-        inforJogos inforjogos = new inforJogos(Integer.parseInt(id_jogo));
-        inforjogos.setVisible(true);
-
-    }//GEN-LAST:event_tb_jogosMouseClicked
     
      public void limparTabela() {
         while (tb_model.getRowCount() > 0) {
@@ -168,8 +125,7 @@ public class jogosDisponiveis extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tb_jogos;
     // End of variables declaration//GEN-END:variables
 }

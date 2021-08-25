@@ -25,6 +25,7 @@ import model.Jogos;
 public class JogosControler {
 
     Jogos jogo = new Jogos();
+    List<Jogos> jogosComprados = new ArrayList<>();
     private static JogosControler Controler;
 
     public int novo_id() {
