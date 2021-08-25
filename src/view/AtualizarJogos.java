@@ -290,7 +290,9 @@ public class AtualizarJogos extends javax.swing.JInternalFrame {
         if (Auxiliares.JOptionConfirm("Atualizando os dados", "Os dados estão corretos?") == 0) {
             String retorno = JogosControler.getInstance().atualizar_jogo(lb_id.getText(), tf_nome.getText(), cb_genero.getSelectedItem().toString(), tf_valor.getText(), tf_tamanho.getText(), cb_etaria.getSelectedItem().toString(), tf_requisito.getText().replace("\n", "*"), check_visivel.isSelected());
             JOptionPane.showMessageDialog(null, retorno);
-            ManipularImagem.redirecionarImagem(imagem, tf_nome.getText());
+            if (imagem != null){
+                ManipularImagem.redirecionarImagem(imagem, tf_nome.getText());
+            }
             carregar_tabela();
         }
 

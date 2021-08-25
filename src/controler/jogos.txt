@@ -5,4 +5,5 @@
 5;wre;MUNDO ABERTO;3213.0;123.0;+14;qewqe;true
 6;teste;FSP;3213.0;213.0;+14;fdsf;true;fdsf
 7;Neeko Liga;MOBA;0.0;0.0;+18;ter +18;true;Um jogo so da neeko
-8;sdfds;MUNDO ABERTO;34.0;324.0;+12;Overwatch: requisitos mínimos*Sistema operacional: Windows 7.*Processador: Intel Core i3 ou AMD Phenom X3 8650.*Memória: RAM 4GB.*Placa de vídeo: NVIDIA GeForce GTX 460, ATI Radeon HD 4850 ou Intel HD Graphics 4400.*Espaço em disco: 30Grewrwe;true;fdsfdf
+8;sdfds;MUNDO ABERTO;34.0;324.0;+12;Overwatch: requisitos mínimos*Sistema operacional: Windows 7.*Processador: Intel Core i3 ou AMD Phenom X3 8650.*Memória: RAM 4GB.*Placa de vídeo: NVIDIA GeForce GTX 460, ATI Radeon HD 4850 ou Intel HD Graphics 4400.*Espaço em disco: 30Grewrwe;true;skdsakdaskdsakdakd
+9;Dead by Daylight;FSP;59.9;2575725.0;+18;Sistema Operacional: Windows 7 64-Bit.*Processador: Intel Core i3-4170 @ 3.70GHz / AMD FX-8120 Eight-Core.*Placa de vídeo: GeForce GTX 460 / Radeon HD 6850.*Memória RAM: 8 GB.*HD Livre: 25 GB Free.*Versão do Directx: Directx 11.;true;sdksadksadsadkask

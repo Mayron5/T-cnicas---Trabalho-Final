@@ -132,7 +132,6 @@ public class CadastroJogos extends javax.swing.JInternalFrame {
         });
 
         lb_imagem.setMaximumSize(new java.awt.Dimension(160, 160));
-        lb_imagem.setMinimumSize(new java.awt.Dimension(0, 0));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -172,7 +171,7 @@ public class CadastroJogos extends javax.swing.JInternalFrame {
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(355, 355, 355)
+                .addGap(366, 366, 366)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -212,7 +211,6 @@ public class CadastroJogos extends javax.swing.JInternalFrame {
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel8)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel5)
@@ -267,7 +265,7 @@ public class CadastroJogos extends javax.swing.JInternalFrame {
             String classificacao = cb_etaria.getSelectedItem().toString();
             String requisitos = tf_requisito.getText().replace("\n", "*");
             String descricao = tf_descricao.getText().replace("\n", "*");
-
+            
             String retorno = JogosControler.getInstance().adicionar_jogo(nome, genero, valor, tamanho, classificacao, requisitos, descricao, check_visivel.isSelected());
 
             JOptionPane.showMessageDialog(null, retorno);
@@ -281,7 +279,9 @@ public class CadastroJogos extends javax.swing.JInternalFrame {
                 cb_genero.setSelectedIndex(0);
                 check_visivel.setSelected(false);
                 
-                ManipularImagem.redirecionarImagem(imagem, nome);
+                if (imagem != null){
+                    ManipularImagem.redirecionarImagem(imagem, nome);
+                }
                 lb_imagem.setIcon(null);
                 
             }

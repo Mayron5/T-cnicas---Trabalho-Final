@@ -189,8 +189,8 @@ public class inforJogos extends javax.swing.JFrame {
         lb_nome.setText(dados.getNome());
         lb_classificacao.setText("Classificação etária: " + dados.getClassificacao_etaria());
         lb_preco.setText("R$" + dados.getValor());
-        tf_requisitos.setText(dados.getPre_requisitos());
-        tf_desc.setText(dados.getDescricao());
+        tf_requisitos.setText(dados.getPre_requisitos().replace("*", "\n"));
+        tf_desc.setText(dados.getDescricao().replace("*", "\n"));
         
         
         ManipularImagem.exibiImagemLabel(dados.getNome(), lb_capa);
