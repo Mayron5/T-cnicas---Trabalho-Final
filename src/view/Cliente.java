@@ -7,7 +7,6 @@ package view;
 
 import controler.PessoaControler;
 import javax.swing.JOptionPane;
-import view.images.jogosDisponiveis;
 
 /**
  *
