@@ -6,10 +6,17 @@
 package view;
 
 import controler.JogosControler;
+import java.awt.Component;
+import java.awt.Image;
 import java.util.Iterator;
 import java.util.List;
+import javax.swing.ImageIcon;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
 import view.inforJogos;
+import view.util.ManipularImagem;
 
 /**
  *
@@ -41,6 +48,7 @@ public class jogosDisponiveis extends javax.swing.JInternalFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tb_jogos = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
+        foto = new javax.swing.JLabel();
 
         setMinimumSize(new java.awt.Dimension(890, 544));
 
@@ -81,6 +89,8 @@ public class jogosDisponiveis extends javax.swing.JInternalFrame {
             }
         });
 
+        foto.setText("jLabel2");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -99,11 +109,17 @@ public class jogosDisponiveis extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 843, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(40, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(foto)
+                .addGap(83, 83, 83))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(41, 41, 41)
+                .addGap(16, 16, 16)
+                .addComponent(foto)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -152,6 +168,8 @@ public class jogosDisponiveis extends javax.swing.JInternalFrame {
         tb_jogos.setModel(tb_model);
     }
 
+    
+  
     public void carregar_tabela() {
         limparTabela();
         List dados = JogosControler.getInstance().retornar_jogos();
@@ -169,6 +187,7 @@ public class jogosDisponiveis extends javax.swing.JInternalFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel foto;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;
