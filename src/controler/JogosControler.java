@@ -25,6 +25,7 @@ import model.Jogos;
 public class JogosControler {
 
     Jogos jogo = new Jogos();
+    List<Jogos> jogosComprados = new ArrayList<>();
     private static JogosControler Controler;
 
     public int novo_id() {
@@ -81,11 +82,11 @@ public class JogosControler {
         if (this.verificar_jogo(nome)) {
             return "O jogo já está cadastrado";
         }
-        
-        if (valorFT < 0){
+
+        if (valorFT < 0) {
             return "Valor inválido";
         }
-        if (tamanhoFT < 0){
+        if (tamanhoFT < 0) {
             return "Tamanho inválido";
         }
         jogo.setId(this.novo_id());
@@ -120,7 +121,6 @@ public class JogosControler {
     }
 
     public String atualizar_jogo(String id, String nome, String genero, String valor, String tamanho, String classificacao, String requisitos, boolean ativo) {
-        
 
         float valorFT = 0;
         float tamanhoFT = 0;
@@ -147,11 +147,11 @@ public class JogosControler {
         if (nome.isEmpty()) {
             return "Preencha o nome";
         }
-        
-        if (valorFT < 0){
+
+        if (valorFT < 0) {
             return "Valor inválido";
         }
-        if (tamanhoFT < 0){
+        if (tamanhoFT < 0) {
             return "Tamanho inválido";
         }
 
@@ -270,7 +270,7 @@ public class JogosControler {
     public Jogos retornar_dados_jogo(int id_jogo) {
 
         FileReader fr = null;
-        
+
         try {
 
             fr = new FileReader("src/controler/jogos.txt");
@@ -307,6 +307,44 @@ public class JogosControler {
         }
 
         return jogo;
+    }
+
+    public List pesquisar_jogo(String nomeJogo) {
+
+        List dados = new ArrayList();
+
+        FileReader fr = null;
+
+        try {
+
+            fr = new FileReader("src/controler/jogos.txt");
+            BufferedReader br = new BufferedReader(fr);
+
+            String linha;
+
+            while ((linha = br.readLine()) != null) {
+
+                String infor[] = linha.split(";");
+                
+                if (infor[1].startsWith(nomeJogo) ) {
+                    dados.add(linha);
+                }
+
+            }
+
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(JogosControler.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(JogosControler.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                fr.close();
+            } catch (IOException ex) {
+                Logger.getLogger(JogosControler.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+        return dados;
     }
 
     public static JogosControler getInstance() {

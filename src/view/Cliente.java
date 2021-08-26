@@ -53,7 +53,9 @@ public class Cliente extends javax.swing.JFrame {
         pn_principal_admin = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cliente");
@@ -65,7 +67,7 @@ public class Cliente extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/carrinho-de-compras.png"))); // NOI18N
-        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.add(jLabel2);
         jLabel2.setBounds(1010, 10, 70, 60);
 
@@ -76,7 +78,7 @@ public class Cliente extends javax.swing.JFrame {
         lb_boas_vindas.setBounds(70, 9, 770, 50);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/logout.png"))); // NOI18N
-        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel4MouseClicked(evt);
@@ -108,9 +110,25 @@ public class Cliente extends javax.swing.JFrame {
         getContentPane().add(jButton2);
         jButton2.setBounds(40, 200, 190, 50);
 
+        jButton4.setText("MEUS JOGOS");
+        jButton4.setMaximumSize(new java.awt.Dimension(67, 23));
+        jButton4.setMinimumSize(new java.awt.Dimension(67, 23));
+        jButton4.setPreferredSize(new java.awt.Dimension(67, 23));
+        getContentPane().add(jButton4);
+        jButton4.setBounds(40, 270, 190, 50);
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/background (1).jpg"))); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 1200, 700);
+
+        jButton3.setText("JOGOS");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3);
+        jButton3.setBounds(40, 200, 190, 50);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -134,6 +152,10 @@ public class Cliente extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         exibir_telas(false, true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -189,6 +211,8 @@ public class Cliente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
