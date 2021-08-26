@@ -326,7 +326,7 @@ public class JogosControler {
 
                 String infor[] = linha.split(";");
                 
-                if (infor[1].startsWith(nomeJogo) ) {
+                if (infor[1].toLowerCase().startsWith(nomeJogo.toLowerCase()) ) {
                     dados.add(linha);
                 }
 

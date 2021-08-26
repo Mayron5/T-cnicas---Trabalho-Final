@@ -51,11 +51,11 @@ public class Cliente extends javax.swing.JFrame {
         lb_boas_vindas = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         pn_principal_admin = new javax.swing.JPanel();
+        jButton4 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cliente");
@@ -92,6 +92,13 @@ public class Cliente extends javax.swing.JFrame {
         getContentPane().add(pn_principal_admin);
         pn_principal_admin.setBounds(260, 110, 890, 540);
 
+        jButton4.setText("MEUS JOGOS");
+        jButton4.setMaximumSize(new java.awt.Dimension(67, 23));
+        jButton4.setMinimumSize(new java.awt.Dimension(67, 23));
+        jButton4.setPreferredSize(new java.awt.Dimension(67, 23));
+        getContentPane().add(jButton4);
+        jButton4.setBounds(40, 270, 190, 50);
+
         jButton1.setText("PERFIL");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,17 +117,6 @@ public class Cliente extends javax.swing.JFrame {
         getContentPane().add(jButton2);
         jButton2.setBounds(40, 200, 190, 50);
 
-        jButton4.setText("MEUS JOGOS");
-        jButton4.setMaximumSize(new java.awt.Dimension(67, 23));
-        jButton4.setMinimumSize(new java.awt.Dimension(67, 23));
-        jButton4.setPreferredSize(new java.awt.Dimension(67, 23));
-        getContentPane().add(jButton4);
-        jButton4.setBounds(40, 270, 190, 50);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/background (1).jpg"))); // NOI18N
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 1200, 700);
-
         jButton3.setText("JOGOS");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -129,6 +125,10 @@ public class Cliente extends javax.swing.JFrame {
         });
         getContentPane().add(jButton3);
         jButton3.setBounds(40, 200, 190, 50);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/background (1).jpg"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 1200, 700);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
