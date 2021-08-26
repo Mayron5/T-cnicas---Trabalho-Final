@@ -90,6 +90,12 @@ public class AtualizarJogos extends javax.swing.JInternalFrame {
         jLabel1.setForeground(new java.awt.Color(40, 36, 110));
         jLabel1.setText("Tamanho do Jogo (em Megabytes):");
 
+        tf_tamanho.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_tamanhoActionPerformed(evt);
+            }
+        });
+
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(40, 36, 110));
         jLabel4.setText("Classificação Etária");
@@ -327,6 +333,10 @@ public class AtualizarJogos extends javax.swing.JInternalFrame {
             lb_imagem.setIcon(new ImageIcon(imagem));
         }
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void tf_tamanhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_tamanhoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_tamanhoActionPerformed
     public void iniciar_tabel_modelo() {
         tb_model.addColumn("Id");
         tb_model.addColumn("Nome");

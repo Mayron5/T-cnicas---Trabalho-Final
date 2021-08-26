@@ -309,6 +309,46 @@ public class JogosControler {
 
         return jogo;
     }
+    
+    public List pesquisar_jogo(String nomeJogo) {
+        
+        List dados = new ArrayList();
+        
+        if (nomeJogo.isEmpty()) {
+            dados.add("false");
+        } else {
+            
+            FileReader fr = null;
+
+            try {
+
+                fr = new FileReader("src/controler/jogos.txt");
+                BufferedReader br = new BufferedReader(fr);
+
+                String linha;
+
+                while ((linha = br.readLine()) != null) {
+
+                    String infor[] = linha.split(";");
+                    if (infor[1].equals(nomeJogo)) {
+                        dados.add(linha);
+                    }
+                }
+
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(JogosControler.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(JogosControler.class.getName()).log(Level.SEVERE, null, ex);
+            } finally {
+                try {
+                    fr.close();
+                } catch (IOException ex) {
+                    Logger.getLogger(JogosControler.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+        return dados;
+    }
 
     public static JogosControler getInstance() {
         if (Controler == null) {
