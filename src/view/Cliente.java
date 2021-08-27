@@ -19,15 +19,15 @@ public class Cliente extends javax.swing.JFrame {
      */
     private int id_cliente;
     
-    perfilCliente perfilcliente;
-    jogosDisponiveis jogosdisponiveis = new jogosDisponiveis();
+    ClientePerfil perfilcliente;
+    ClienteJogosDisponiveis jogosdisponiveis = new ClienteJogosDisponiveis();
     
     public Cliente(int id_cliente) {
         this();
         this.id_cliente = id_cliente;
         this.mensagem_boas_vindas(this.id_cliente);
         
-        perfilcliente = new perfilCliente(this.id_cliente);
+        perfilcliente = new ClientePerfil(this.id_cliente);
         pn_principal_admin.add(perfilcliente);
         pn_principal_admin.add(jogosdisponiveis);
     }
@@ -137,7 +137,7 @@ public class Cliente extends javax.swing.JFrame {
         
         if (JOptionConfirm("Logout", "Deseja deslogar do sistema?") == 0) {
             JOptionPane.showMessageDialog(null, "Logout feito com sucesso!");
-            Login login = new Login();
+            LoginCliente login = new LoginCliente();
             login.setVisible(true);
             this.dispose();
             
@@ -198,6 +198,9 @@ public class Cliente extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Cliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

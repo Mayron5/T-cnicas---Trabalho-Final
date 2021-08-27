@@ -9,7 +9,7 @@ package model;
  *
  * @author Mayron
  */
-public class CarrinhoCompras {
+public class Carrinho {
     
     private Jogos carrinhoCompras[];
 

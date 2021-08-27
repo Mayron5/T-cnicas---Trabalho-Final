@@ -13,20 +13,20 @@ import model.Pessoa;
  *
  * @author Mayron
  */
-public class perfilCliente extends javax.swing.JInternalFrame {
+public class ClientePerfil extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form perfilCliente
+     * Creates new form ClientePerfil
      */
     private int id_cliente;
 
-    public perfilCliente(int id_cliente) {
+    public ClientePerfil(int id_cliente) {
         this();
         this.id_cliente = id_cliente;
         dados_pessoais(this.id_cliente);
     }
 
-    public perfilCliente() {
+    public ClientePerfil() {
         initComponents();
 
     }

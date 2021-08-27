@@ -220,7 +220,7 @@ public class PreLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        Login login = new Login();
+        LoginCliente login = new LoginCliente();
         
         login.setVisible(true);
         this.dispose();

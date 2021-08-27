@@ -15,13 +15,13 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Mayron
  */
-public class carrinhoDeCompras extends javax.swing.JInternalFrame {
+public class ClienteCarrinho extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form jogosDisponiveis2
      */
     DefaultTableModel tb_model = new DefaultTableModel();
-    public carrinhoDeCompras() {
+    public ClienteCarrinho() {
         initComponents();
         iniciar_tabel_modelo();
         carregar_tabela();

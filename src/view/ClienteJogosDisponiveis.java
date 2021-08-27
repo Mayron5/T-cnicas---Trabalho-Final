@@ -16,14 +16,14 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
-import view.inforJogos;
+import view.ClienteInforJogos;
 import view.util.ManipularImagem;
 
 /**
  *
  * @author Mayron
  */
-public class jogosDisponiveis extends javax.swing.JInternalFrame {
+public class ClienteJogosDisponiveis extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form jogosDisponiveis2
@@ -31,7 +31,7 @@ public class jogosDisponiveis extends javax.swing.JInternalFrame {
     DefaultTableModel tb_model = new DefaultTableModel();
     String nomeJogo = null;
 
-    public jogosDisponiveis() {
+    public ClienteJogosDisponiveis() {
         initComponents();
         iniciar_tabel_modelo();
         carregar_tabela();
@@ -132,7 +132,7 @@ public class jogosDisponiveis extends javax.swing.JInternalFrame {
         int linha_selecionada = tb_jogos.getSelectedRow();
         String id = tb_jogos.getValueAt(linha_selecionada, 0).toString();
 
-        inforJogos inforjogos = new inforJogos(Integer.parseInt(id));
+        ClienteInforJogos inforjogos = new ClienteInforJogos(Integer.parseInt(id));
         inforjogos.setVisible(true);
 
     }//GEN-LAST:event_tb_jogosMouseClicked

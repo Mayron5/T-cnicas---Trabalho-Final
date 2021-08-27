@@ -165,7 +165,7 @@ public class CadastroCliente extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, retorno);
 
             if (retorno.equals("Cadastrado com sucesso!")) {
-                Login login = new Login();
+                LoginCliente login = new LoginCliente();
                 login.setVisible(true);
                 this.setVisible(false);
                 this.dispose();
@@ -182,7 +182,7 @@ public class CadastroCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_tf_senhaActionPerformed
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-        Login login = new Login();
+        LoginCliente login = new LoginCliente();
         login.setVisible(true);
         this.setVisible(false);
         this.dispose();

@@ -164,7 +164,7 @@ public class LoginAdmin extends javax.swing.JFrame {
         if ((id_usuario = PessoaControler.getInstance().logar(usuario, senha, true)) != 0) {
 
             JOptionPane.showMessageDialog(null, "Bem vindo de volta ao sistema!");
-            TelaAdmin telaAdmin = new TelaAdmin();
+            Admin telaAdmin = new Admin();
             telaAdmin.setVisible(true);
             this.dispose();
 

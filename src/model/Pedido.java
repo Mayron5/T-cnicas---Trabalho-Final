@@ -17,7 +17,7 @@ public class Pedido {
     private Date data;
     private int status;
     private String forma_pagamento;
-    private CarrinhoCompras carrinhoCompras;
+    private Carrinho carrinhoCompras;
 
     public int getNumero() {
         return numero;
@@ -51,11 +51,11 @@ public class Pedido {
         this.forma_pagamento = forma_pagamento;
     }
 
-    public CarrinhoCompras getCarrinhoCompras() {
+    public Carrinho getCarrinhoCompras() {
         return carrinhoCompras;
     }
 
-    public void setCarrinhoCompras(CarrinhoCompras carrinhoCompras) {
+    public void setCarrinhoCompras(Carrinho carrinhoCompras) {
         this.carrinhoCompras = carrinhoCompras;
     }
     
