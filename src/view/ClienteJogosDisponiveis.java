@@ -16,7 +16,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
-import view.ClienteInforJogos;
+import view.ClienteInforJogo;
 import view.util.ManipularImagem;
 
 /**
@@ -30,6 +30,13 @@ public class ClienteJogosDisponiveis extends javax.swing.JInternalFrame {
      */
     DefaultTableModel tb_model = new DefaultTableModel();
     String nomeJogo = null;
+
+    private int id_usuario;
+
+    public ClienteJogosDisponiveis(int id_usuario) {
+        this();
+        this.id_usuario = id_usuario;
+    }
 
     public ClienteJogosDisponiveis() {
         initComponents();
@@ -124,15 +131,15 @@ public class ClienteJogosDisponiveis extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
 
-    }                                        
+    }
 
     private void tb_jogosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb_jogosMouseClicked
         int linha_selecionada = tb_jogos.getSelectedRow();
         String id = tb_jogos.getValueAt(linha_selecionada, 0).toString();
 
-        ClienteInforJogos inforjogos = new ClienteInforJogos(Integer.parseInt(id));
+        ClienteInforJogo inforjogos = new ClienteInforJogo(Integer.parseInt(id));
         inforjogos.setVisible(true);
 
     }//GEN-LAST:event_tb_jogosMouseClicked

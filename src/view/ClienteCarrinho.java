@@ -5,26 +5,37 @@
  */
 package view;
 
-import controler.JogosControler;
-import java.util.Iterator;
-import java.util.List;
-import javax.swing.table.DefaultTableModel;
-
+import controler.PessoaControler;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Mayron
  */
-public class ClienteCarrinho extends javax.swing.JInternalFrame {
+public class ClienteCarrinho extends javax.swing.JFrame {
 
     /**
-     * Creates new form jogosDisponiveis2
+     * Creates new form Cliente
      */
-    DefaultTableModel tb_model = new DefaultTableModel();
+    private int id_cliente;
+    
+    ClienteCarrinhoJogos subTela;
+    ClienteJogosDisponiveis jogosdisponiveis = new ClienteJogosDisponiveis();
+    
+    public ClienteCarrinho(int id_cliente) {
+        this();
+        this.id_cliente = id_cliente;
+        this.mensagem_boas_vindas(this.id_cliente);
+        
+        
+        
+        subTela = new ClienteCarrinhoJogos(this.id_cliente);
+        pn_principal_carrinho.add(subTela);
+    }
+    
     public ClienteCarrinho() {
         initComponents();
-        iniciar_tabel_modelo();
-        carregar_tabela();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -36,96 +47,134 @@ public class ClienteCarrinho extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        lb_boas_vindas = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        pn_principal_carrinho = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tb_jogos = new javax.swing.JTable();
 
-        setMinimumSize(new java.awt.Dimension(890, 544));
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Cliente");
+        setMinimumSize(new java.awt.Dimension(1193, 696));
+        setUndecorated(true);
+        getContentPane().setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 2, 11)); // NOI18N
-        jLabel1.setText("Carrinho de Compras");
+        jPanel1.setBackground(new java.awt.Color(153, 153, 255));
+        jPanel1.setLayout(null);
 
-        tb_jogos.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/carrinho-de-compras.png"))); // NOI18N
+        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(1010, 10, 70, 60);
+
+        lb_boas_vindas.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        lb_boas_vindas.setForeground(new java.awt.Color(255, 255, 255));
+        lb_boas_vindas.setText("Mensagem de boas vindas");
+        jPanel1.add(lb_boas_vindas);
+        lb_boas_vindas.setBounds(70, 9, 770, 50);
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/logout.png"))); // NOI18N
+        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
             }
-        ));
-        jScrollPane2.setViewportView(tb_jogos);
+        });
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(1110, 10, 70, 60);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 815, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 31, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 702, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(138, 138, 138)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(349, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 17, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 531, Short.MAX_VALUE)))
-        );
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 1220, 80);
+        getContentPane().add(pn_principal_carrinho);
+        pn_principal_carrinho.setBounds(120, 180, 890, 470);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/images/background (1).jpg"))); // NOI18N
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 1200, 700);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
-     public void limparTabela() {
-        while (tb_model.getRowCount() > 0) {
-            tb_model.removeRow(0);
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        
+        if (JOptionConfirm("Logout", "Deseja deslogar do sistema?") == 0) {
+            JOptionPane.showMessageDialog(null, "Logout feito com sucesso!");
+            LoginCliente login = new LoginCliente();
+            login.setVisible(true);
+            this.dispose();
+            
         }
-        tb_jogos.setAutoCreateColumnsFromModel(false);
+
+    }//GEN-LAST:event_jLabel4MouseClicked
+
+    /**
+     * @param args the command line arguments
+     */
+    public int JOptionConfirm(String titulo, String mensagem) {
+        Object[] options = {"Confirmar", "Cancelar"};
+        int opcao = JOptionPane.showOptionDialog(null, mensagem, titulo, JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, options, options[0]);
+        return opcao;
     }
     
-    public void iniciar_tabel_modelo() {
-        tb_model.addColumn("Id");
-        tb_model.addColumn("Nome");
-        tb_model.addColumn("Gênero");
-        tb_model.addColumn("Preço");
-        tb_model.addColumn("Tamanho");
-        tb_model.addColumn("Classificação");
-        tb_model.addColumn("Requisitos");
-        tb_model.addColumn("Visivel");
-        tb_jogos.setModel(tb_model);
+    public void mensagem_boas_vindas(int id_cliente) {
+        String nome_pessoa = PessoaControler.getInstance().retornar_nome(PessoaControler.getInstance().dados_pessoa(id_cliente));
+        lb_boas_vindas.setText("Olá " + nome_pessoa + " seja bem vindo ao GankGames");
     }
-
-    public void carregar_tabela() {
-        limparTabela();
-        List dados = JogosControler.getInstance().retornar_jogos();
-        Iterator it = dados.iterator();
-        Object element = null;
-
-        while (it.hasNext()) {
-            element = it.next();
-            String linha = element.toString();
-            String infor[] = linha.split(";");
-
-            infor[7] = infor[7].equals("true") ? "Sim" : "Não";
-            tb_model.addRow(infor);
+    
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(ClienteCarrinho.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(ClienteCarrinho.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(ClienteCarrinho.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(ClienteCarrinho.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new ClienteCarrinho().setVisible(true);
+            }
+        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable tb_jogos;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lb_boas_vindas;
+    private javax.swing.JPanel pn_principal_carrinho;
     // End of variables declaration//GEN-END:variables
 }

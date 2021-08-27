@@ -16,22 +16,23 @@ import view.util.*;
  *
  * @author Cadu Santos
  */
-public class ClienteInforJogos extends javax.swing.JFrame {
+public class ClienteInforJogo extends javax.swing.JFrame {
 
     /**
      * Creates new form carrinhodecompras
      */
-    
+    private int id_usuario = 1;
     private int id_jogos;
     
     BufferedImage imagem;
-    public ClienteInforJogos(int id_jogo){
+    public ClienteInforJogo(int id_jogo){
         this();
+        //this.id_usuario = id_usuario;
         this.id_jogos = id_jogo;
         dados_jogo();
     }
     
-    public ClienteInforJogos() {
+    public ClienteInforJogo() {
         initComponents();
         this.setLocationRelativeTo(null);
         
@@ -144,17 +145,15 @@ public class ClienteInforJogos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        /*
-        C
         
-        Cliente telaCliente = new Cliente(id_usuario);
-          telaCliente.setVisible(true);
-
-            this.setVisible(false);
-            this.dispose();
+        //CarrinhoControler.getInstance().
         
-        CarrinhoControler.getInstance().comprar_jogo(dados);
-        */
+        ClienteCarrinho telaClienteCarrinho = new ClienteCarrinho(id_usuario);
+        telaClienteCarrinho.setVisible(true);
+        
+        this.setVisible(false);
+        this.dispose();
+        
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -175,14 +174,78 @@ public class ClienteInforJogos extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ClienteInforJogos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ClienteInforJogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ClienteInforJogos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ClienteInforJogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ClienteInforJogos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ClienteInforJogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ClienteInforJogos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ClienteInforJogo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -251,7 +314,7 @@ public class ClienteInforJogos extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ClienteInforJogos().setVisible(true);
+                new ClienteInforJogo().setVisible(true);
             }
         });
     }
